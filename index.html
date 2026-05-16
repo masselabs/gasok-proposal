@@ -37,6 +37,7 @@
             <div class="cover-copy">
               <p class="eyebrow">GASOK / GIWA Acceleration Application</p>
               <h1>Private Dojang Pass</h1>
+              <p class="cover-brand">by <strong>ZKProofport</strong></p>
               <p class="lede">
                 Dojang's trust, without the exposure. Zero-knowledge proofs,
                 native to GIWA Wallet.
@@ -148,74 +149,47 @@
         </section>
 
         <section class="slide wallet" data-title="Wallet Flow">
-          <div class="slide-header compact">
-            <p class="eyebrow">Wallet flow and architecture</p>
-            <h2>The dApp uses the SDK; users prove through the app today and a wallet-native flow later.</h2>
+          <div class="slide-header">
+            <p class="eyebrow">Integration paths</p>
+            <h2>Two ways to request Dojang proofs through ZKProofport.</h2>
           </div>
-          <div class="wallet-layout">
-            <div class="phone-frame">
-              <div class="phone-bar"></div>
-              <div class="wallet-screen">
-                <div class="wallet-title">Private Dojang Pass</div>
-                <div class="wallet-card verified">
-                  <span>Verified Address</span>
-                  <b>Upbit Korea</b>
-                  <small>KYC status without wallet exposure</small>
-                </div>
-                <div class="wallet-card balance">
-                  <span>Verified Balance</span>
-                  <b>Threshold proof</b>
-                  <small>Prove enough, not the exact amount</small>
-                </div>
-                <div class="wallet-request">
-                  <span>DApp request</span>
-                  <p>Prove KYC status or balance eligibility for this action.</p>
-                  <button type="button">Generate proof</button>
-                </div>
-                <div class="wallet-disclosure">
-                  <b>Shared with dApp</b>
-                  <span>KYC: verified ✓</span>
-                  <span>Nullifier: scoped</span>
-                  <span>Wallet address: hidden</span>
-                  <span>Balance: hidden</span>
-                </div>
-              </div>
-            </div>
-            <div class="arch-map compact-map" aria-label="Wallet proof architecture">
-              <article class="arch-node user">
-                <small>dApp + SDK</small>
-                <h3>Request proof</h3>
-                <p>The dApp asks for KYC status or balance eligibility through @zkproofport/giwa.</p>
-              </article>
-              <div class="arch-arrow" aria-hidden="true"></div>
-              <article class="arch-node wallet-node">
-                <small>Proof surface</small>
-                <h3>Open app or wallet flow</h3>
-                <p>Today the user opens ZKProofport through QR or deep link. Later, the same request can become a GIWA Wallet-native approval.</p>
-              </article>
-              <div class="arch-arrow" aria-hidden="true"></div>
-              <article class="arch-node proof-node">
-                <small>ZK proof generation</small>
-                <h3>Generate proof</h3>
-                <p>The mobile app creates the proof now; the same model can move into the wallet-native surface later.</p>
-              </article>
-              <div class="arch-arrow" aria-hidden="true"></div>
-              <article class="arch-node dapp-node">
-                <small>GIWA Chain</small>
-                <h3>Verifier contract</h3>
-                <p>Proof validity is checked on GIWA.</p>
-              </article>
-              <div class="arch-arrow" aria-hidden="true"></div>
-              <article class="arch-node chain-node">
-                <small>dApp policy</small>
-                <h3>Grant access</h3>
-                <p>The dApp applies access, one-user-one-action, or threshold rules.</p>
-              </article>
-              <div class="agent-callout">
-                <b>Two integration modes</b>
-                <p><b>Available path:</b> dApp -&gt; SDK -&gt; ZKProofport app via QR/deep link -&gt; proof -&gt; GIWA verifier<br><b>Native path:</b> dApp -&gt; GIWA Wallet proof request -&gt; in-wallet proving/approval -&gt; GIWA verifier</p>
-              </div>
-            </div>
+          <div class="two-paths">
+            <article class="path-card path-available">
+              <span class="path-badge">Available now</span>
+              <h3>ZKProofport App</h3>
+              <p class="path-desc">The dApp triggers the ZKProofport mobile app via SDK.</p>
+              <ol class="path-flow">
+                <li>dApp requests proof via @zkproofport/giwa SDK</li>
+                <li>User opens ZKProofport app via QR or deep link</li>
+                <li>User approves and generates proof on-device</li>
+                <li>Proof is verified by GIWA verifier contract</li>
+              </ol>
+            </article>
+            <article class="path-card path-native">
+              <span class="path-badge">With wallet team</span>
+              <h3>GIWA Wallet Native</h3>
+              <p class="path-desc">The proof request appears inside the GIWA Wallet itself.</p>
+              <ol class="path-flow">
+                <li>dApp requests proof via @zkproofport/giwa SDK</li>
+                <li>GIWA Wallet shows proof request popup</li>
+                <li>User approves inside the wallet</li>
+                <li>Proof is verified by GIWA verifier contract</li>
+              </ol>
+            </article>
+          </div>
+          <div class="disclosure-strip">
+            <article class="disc-shared">
+              <b>Shared with dApp</b>
+              <span>KYC: verified ✓</span>
+              <span>Balance: threshold met</span>
+              <span>Nullifier: scoped</span>
+            </article>
+            <article class="disc-private">
+              <b>Stays private</b>
+              <span>Wallet address</span>
+              <span>Exact balance</span>
+              <span>Personal identity</span>
+            </article>
           </div>
         </section>
 
@@ -372,10 +346,10 @@
           </div>
           <div class="team-grid">
             <article class="person">
-              <img src="./assets/team-hyunsu.png" alt="Hyunsu Young profile" />
+              <img src="./assets/team-hyunsu.png" alt="Sooyoung Hyun profile" />
               <div>
                 <span>Co-founder</span>
-                <h3>Hyunsu Young</h3>
+                <h3>Sooyoung Hyun</h3>
                 <p>
                   Ethereum Remix IDE core contributor, former DSRV lead
                   engineer, Aztec Genesis Sequencer operator. Leads product,
@@ -384,10 +358,10 @@
               </div>
             </article>
             <article class="person">
-              <img src="./assets/team-jehyuk.png" alt="Jehyuk Hyun profile" />
+              <img src="./assets/team-jehyuk.png" alt="Jaehyuk Hyun profile" />
               <div>
                 <span>Co-founder</span>
-                <h3>Jehyuk Hyun</h3>
+                <h3>Jaehyuk Hyun</h3>
                 <p>
                   KAIST-trained engineer, former NHN Cloud team lead and Tmax
                   Soft engineer. Leads backend systems, circuit integration,
@@ -407,6 +381,124 @@
             </p>
           </div>
         </section>
+
+        <section class="slide appendix-tech" data-title="Tech Detail">
+          <div class="slide-header">
+            <p class="eyebrow">Appendix A — Technical Architecture</p>
+            <h2>From Dojang attestation to on-chain verification: the full proof pipeline.</h2>
+          </div>
+          <div class="tech-pipeline">
+            <div class="tech-stage stage-eas">
+              <small>Dojang / EAS</small>
+              <strong>Attestation source</strong>
+              <span>KYC attestation TX recorded on-chain via EAS</span>
+            </div>
+            <div class="tech-arrow" aria-hidden="true"></div>
+            <div class="tech-stage stage-mobile">
+              <small>Mobile App</small>
+              <strong>On-device proving</strong>
+              <span>mopro Rust engine via UniFFI bindings</span>
+            </div>
+            <div class="tech-arrow" aria-hidden="true"></div>
+            <div class="tech-stage stage-circuit">
+              <small>Noir Circuit</small>
+              <strong>ZK proof generation</strong>
+              <span>UltraHonk proof system (Aztec/Noir)</span>
+            </div>
+            <div class="tech-arrow" aria-hidden="true"></div>
+            <div class="tech-stage stage-verify">
+              <small>Verifier Contract</small>
+              <strong>On-chain verification</strong>
+              <span>Solidity verifier: verify(proof, publicInputs)</span>
+            </div>
+          </div>
+          <div class="tech-cards">
+            <article class="tech-card">
+              <span>CIRCUIT</span>
+              <h3>Noir ZK Circuit</h3>
+              <ul>
+                <li>User ownership: ECDSA signature verification</li>
+                <li>TX authenticity: attestation transaction parsing</li>
+                <li>Signer validation: Merkle proof against authorized list</li>
+                <li>Sybil resistance: deterministic nullifier generation</li>
+              </ul>
+            </article>
+            <article class="tech-card">
+              <span>PROVING</span>
+              <h3>mopro Mobile Proving</h3>
+              <ul>
+                <li>Rust-based prover compiled for iOS and Android</li>
+                <li>UltraHonk proof system with low memory mode</li>
+                <li>30–60 seconds on-device proof generation</li>
+                <li>Circuit files downloaded and cached at runtime</li>
+              </ul>
+            </article>
+            <article class="tech-card">
+              <span>VERIFY</span>
+              <h3>On-chain Verifier</h3>
+              <ul>
+                <li>Auto-generated Solidity from Noir circuit</li>
+                <li>verify(bytes proof, bytes32[] publicInputs) → bool</li>
+                <li>View function call — no gas cost for verification</li>
+                <li>Deployed on Base Sepolia and Base Mainnet</li>
+              </ul>
+            </article>
+          </div>
+          <div class="tech-boundary">
+            <article class="tech-private">
+              <b>Private inputs (never revealed)</b>
+              <span>wallet address</span>
+              <span>attestation TX</span>
+              <span>user signature</span>
+              <span>signer pubkey</span>
+            </article>
+            <article class="tech-public">
+              <b>Public inputs (shared with verifier)</b>
+              <span>signal_hash</span>
+              <span>signer merkle root</span>
+              <span>scope</span>
+              <span>nullifier</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="slide demo" data-title="Demo">
+          <div class="slide-header">
+            <p class="eyebrow">Appendix B — Live Demo</p>
+            <h2>Privacy-preserving KYC verification on a real testnet environment.</h2>
+          </div>
+          <div class="demo-layout">
+            <div class="demo-video-area">
+              <div class="demo-video-placeholder">
+                <div class="demo-play-icon" aria-hidden="true">▶</div>
+                <span class="demo-video-label">Demo video will be embedded here</span>
+              </div>
+            </div>
+            <div class="demo-details">
+              <article class="demo-setup">
+                <b>Demo environment</b>
+                <ul>
+                  <li>EAS contracts deployed on testnet</li>
+                  <li>KYC-verified addresses registered as real attestations</li>
+                  <li>ZKProofport mobile app generating proofs on-device</li>
+                  <li>GIWA verifier contract validating proofs on-chain</li>
+                </ul>
+              </article>
+              <article class="demo-flow">
+                <b>What the demo shows</b>
+                <ol>
+                  <li>A user with a KYC-verified Dojang address opens the sample dApp</li>
+                  <li>The dApp requests a KYC proof via @zkproofport/giwa SDK</li>
+                  <li>The user generates a zero-knowledge proof on their mobile device</li>
+                  <li>The proof is verified on-chain — without revealing the wallet address</li>
+                </ol>
+              </article>
+            </div>
+          </div>
+          <aside class="problem-note">
+            This demo runs on a testnet environment that mirrors mainnet conditions: real EAS attestations, real proof generation, and real on-chain verification.
+          </aside>
+        </section>
       </main>
 
       <footer class="controls" aria-label="Deck controls">
@@ -416,7 +508,7 @@
         <div class="counter" aria-live="polite">
           <span id="currentSlide">01</span>
           <span>/</span>
-          <span id="totalSlides">09</span>
+          <span id="totalSlides">11</span>
         </div>
         <button class="nav-button" id="nextBtn" type="button" aria-label="Next slide">
           <span aria-hidden="true">&rarr;</span>
