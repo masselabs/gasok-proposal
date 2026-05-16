@@ -109,7 +109,7 @@ const copy = {
       eyebrow: "Build scope",
       title: "What we will build during GASOK.",
       note:
-        "We focus on building the core end-to-end pipeline first: privacy-preserving KYC proof, balance threshold proof, GIWA verifier, SDK request, and a showcase dApp.",
+        "We will ship a focused end-to-end pipeline first: privacy-preserving KYC proof, GIWA verifier, SDK request, and a showcase dApp. Balance threshold proof follows the same model as the next expansion.",
       codes: ["CIRCUIT", "CONTRACT", "SDK", "WALLET", "MOBILE", "dApp"],
       titles: [
         "Dojang proof circuits",
@@ -157,16 +157,16 @@ const copy = {
       title: "We are not starting from zero. We are adapting proven proof infrastructure for the GIWA ecosystem.",
       labels: ["EAS / KYC proof PoC", "mopro mobile proving", "Aztec / Noir grant", "Agent path"],
       titles: [
-        "Working EAS-based proof path",
-        "Client-side proofs on mobile",
-        "Circuit implementation recognized",
+        "Working EAS-based KYC proof path",
+        "Mobile client-side proof generation",
+        "Circuit capability recognized by Aztec",
         "Automation-ready proof model",
       ],
       bodies: [
-        "We have experience with Ethereum Attestation Service (EAS)-based systems and circuit implementation. KYC attestation proofs already work across proof generation and verifier contract flow.",
-        "We already have mobile client-side proving experience using mopro and React Native runtime integration.",
-        "Aztec / Noir grant support validates our circuit implementation capability.",
-        "Agents can request credential proofs and rely on the same verifier contract model.",
+        "Building on our experience with Ethereum Attestation Service (EAS) and circuit implementation, our KYC attestation proof already works end-to-end across proof generation and verifier contract flow.",
+        "We have hands-on experience with mobile client-side proving through mopro and React Native runtime integration.",
+        "Our circuit implementation capability has been recognized through an Aztec / Noir grant.",
+        "AI agents can use the same credential proof request and verifier contract model.",
       ],
       ledger: ["Aztec / Noir grant", "EAS attestation system experience", "mopro mobile proving capability"],
     },
@@ -297,8 +297,8 @@ const copy = {
       "기존 성과",
       "GASOK 계획",
       "팀",
-      "기술 상세",
-      "데모",
+      "부록 A - 기술 상세",
+      "부록 B - 데모",
     ],
     controls: {
       prev: "이전 슬라이드",
@@ -318,7 +318,7 @@ const copy = {
     },
     problem: {
       eyebrow: "문제",
-      title: "Dojang은 신뢰할 수 있는 데이터로서 유용하지만, dApp이 이를 직접 조회하게 되면 프라이버시 침해 위험이 발생합니다.",
+      title: "Dojang은 유용한 신뢰 데이터를 제공하지만, dApp이 이를 직접 조회하면 지갑의 세부 정보가 그대로 드러날 수 있어 프라이버시 보호 장치가 필요합니다.",
       labels: ["Before", "After"],
       titles: [
         "주소를 직접 조회하는 방식",
@@ -333,7 +333,7 @@ const copy = {
     },
     solution: {
       eyebrow: "해결",
-      title: "Dojang Attestation을 프라이버시가 보장되는 지갑 친화적 경험으로 전환하고, GIWA Wallet 네이티브 UX로 나아갑니다.",
+      title: "Dojang Attestation을 프라이버시가 보장되는 솔루션으로 제공하며, 향후 GIWA Wallet 자체 기능(Native UX)으로 통합해 나갑니다.",
       smalls: ["발행자와 신뢰 원천", "사용자 증명 접점", "dApp 통합"],
       names: ["Upbit / Dojang", "ZKProofport 앱 / GIWA Wallet", "GIWA dApps"],
       bodies: ["Verified Address와 Verified Balance attestation", "모바일 증명 생성, 승인 UX, 선택적 공개", "SDK 요청과 GIWA 검증기 컨트랙트가 증명을 사용합니다"],
@@ -420,7 +420,7 @@ const copy = {
     },
     traction: {
       eyebrow: "기존 성과",
-      title: "우리는 제로 베이스에서 시작하지 않습니다. 이미 검증이 완료된 증명 인프라를 GIWA 생태계에 맞춰 최적화합니다.",
+      title: "우리는 제로 베이스가 아니라 이미 검증이 완료된 증명 인프라를 GIWA 생태계에 맞춰 최적화합니다.",
       labels: ["EAS / KYC 증명 PoC", "mopro 모바일 증명", "Aztec / Noir 그랜트", "에이전트 경로"],
       titles: [
         "EAS 기반 KYC 증명 흐름",
@@ -429,9 +429,9 @@ const copy = {
         "자동화에 맞는 증명 모델",
       ],
       bodies: [
-        "Ethereum Attestation Service(EAS) 기반 시스템 경험과 서킷 구현 역량을 바탕으로, KYC Attestation 증명은 증명 생성부터 검증 컨트랙트까지 이미 정상 작동하고 있습니다.",
-        "mopro와 React Native 런타임 통합을 통해 모바일 클라이언트 사이드 증명 생성 경험을 보유하고 있습니다.",
-        "Aztec / Noir 그랜트를 통해 서킷 구현 역량을 인정받았습니다.",
+        "Ethereum Attestation Service(EAS) 기반 시스템 경험과 서킷 구현 역량을 바탕으로, KYC Attestation는 증명 생성부터 검증 컨트랙트까지 이미 정상 작동하고 있습니다.",
+        "mopro와 React Native 런타임 통합을 통해 모바일 클라이언트 사이드 증명 생성 기술을 보유하고 있습니다.",
+        "서킷 구현 역량을 인정받아 Aztec / Noir로 부터 그랜트를 수여받았습니다.",
         "AI 에이전트도 같은 자격 증명 요청과 검증 모델을 사용할 수 있습니다.",
       ],
       ledger: ["Aztec / Noir 그랜트", "EAS 기반 Attestation 경험", "mopro 모바일 증명 역량"],
@@ -491,7 +491,7 @@ const copy = {
       ],
       closeTitle: "GASOK에 참가하는 이유",
       closeBody:
-        "우리의 비전은 ZKProofport가 GIWA 사용자들에게 Dojang의 활용도와 안전성을 높여주고, dApp 빌더들이 손쉽게 연동할 수 있는 프라이버시 레이어로 자리 잡는 것입니다. GIWA가 원화 스테이블코인이나 RWA 같은 규제 영역으로 확장될수록, 개인정보 노출 없이 규정 준수를 증명할 수 있는 능력이 필수적입니다. GASOK을 통해 기술적 얼라인먼트와 생태계의 피드백을 얻어, 이를 GIWA 네이티브 프로덕트로 발전시키고자 합니다.",
+        "우리의 비전은 ZKProofport가 GIWA 사용자들에게 Dojang의 활용도와 안전성을 높여주고, dApp 빌더들이 손쉽게 연동할 수 있는 프라이버시 레이어로 자리 잡는 것입니다. GIWA가 원화 스테이블코인이나 RWA 같은 규제 영역으로 확장될수록, 개인정보 노출 없이 규정 준수를 증명할 수 있는 기술적 인프라가 필수적입니다. GASOK을 통해 기술적 얼라인먼트와 생태계의 피드백을 얻어, 이를 GIWA 네이티브 프로덕트로 발전시키고자 합니다.",
     },
     appendixTech: {
       eyebrow: "부록 A \u2014 기술 아키텍처",
@@ -509,15 +509,15 @@ const copy = {
       cardItems: [
         "사용자 소유권: ECDSA 서명 검증",
         "TX 진본성: attestation 트랜잭션 파싱",
-        "서명자 검증: 인가된 목록 대조 Merkle proof",
-        "시빌 저항: 결정적 nullifier 생성",
+        "서명자 검증: 인가된 발급자 목록과 대조하는 Merkle Proof",
+        "시빌(Sybil) 저항: 결정론적(Deterministic) Nullifier 생성",
         "iOS/Android용 Rust 기반 프로버",
         "UltraHonk 증명 시스템 (Low Memory 모드)",
-        "3\u201310초 디바이스 증명 생성",
+        "기기 내(On-device)에서 3\u201310초 이내 증명 생성",
         "서킷 파일 런타임 다운로드 및 캐싱",
         "Noir 서킷에서 자동 생성된 Solidity 코드",
         "verify(bytes proof, bytes32[] publicInputs) \u2192 bool",
-        "View 함수 호출 \u2014 검증에 가스 비용 없음",
+        "View 함수 사용 \u2014 증명 검증 시 가스비 불필요",
         "Giwa Network에 배포",
       ],
       privateTitle: "Private inputs (비공개)",
@@ -695,6 +695,18 @@ function applyBindings() {
       setNodeValue(node, nodeValue, binding.html);
     });
   });
+
+  // Update data-label attributes on credential table for mobile display
+  const tableHeaders = readCopy("credentials.table");
+  if (tableHeaders) {
+    const headerLabels = tableHeaders.slice(0, 3);
+    document.querySelectorAll(".table-row:not(.table-head) span").forEach((span) => {
+      const cellIndex = Array.from(span.parentNode.children).indexOf(span);
+      if (cellIndex >= 0 && cellIndex < headerLabels.length) {
+        span.dataset.label = headerLabels[cellIndex];
+      }
+    });
+  }
 }
 
 function buildNavigation() {

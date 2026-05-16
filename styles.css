@@ -2101,6 +2101,23 @@ p {
 
   .table-row span {
     border-bottom: 1px solid var(--ink);
+    padding: 12px 14px;
+    display: grid;
+    gap: 2px;
+  }
+
+  .table-row span::before {
+    content: attr(data-label);
+    font-size: 0.68rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    display: block;
+  }
+
+  .table-head {
+    display: none;
   }
 
   .table-row span:last-child {
@@ -2150,6 +2167,20 @@ p {
 
   .tech-boundary {
     grid-template-columns: 1fr;
+  }
+
+  .tech-arrow {
+    width: 2px;
+    height: 30px;
+    justify-self: center;
+  }
+
+  .tech-arrow::after {
+    right: auto;
+    left: 50%;
+    top: auto;
+    bottom: -1px;
+    transform: translateX(-50%) rotate(135deg);
   }
 }
 
