@@ -34,10 +34,10 @@ const copy = {
     },
     cover: {
       eyebrow: "GASOK / GIWA Acceleration Application",
-      title: "Private Dojang Pass for GIWA Wallet",
+      title: "Private Dojang Pass",
       lede:
         "Dojang's trust, without the exposure. Zero-knowledge proofs, native to GIWA Wallet.",
-      tags: ["Dojang", "GIWA Wallet", "Wallet Privacy", "ZK Proofs"],
+      tags: ["Dojang", "GIWA Wallet", "Privacy", "ZK Proofs", "KYC", "Balance"],
       passportPrivate: "PRIVATE",
       passportTitle: "DOJANG",
       stampTop: "Verified Address",
@@ -61,7 +61,7 @@ const copy = {
     },
     solution: {
       eyebrow: "Solution",
-      title: "Make Dojang proofs private and wallet-friendly, with a path to GIWA Wallet-native UX.",
+      title: "Turn Dojang attestations into privacy-preserving, wallet-friendly proofs — with a path to GIWA Wallet-native UX.",
       smalls: ["Issuer and trust source", "User proof surface", "dApp integration"],
       names: ["Upbit / Dojang", "ZKProofport App / GIWA Wallet", "GIWA dApps"],
       bodies: [
@@ -81,7 +81,7 @@ const copy = {
     },
     wallet: {
       eyebrow: "Wallet flow and architecture",
-      title: "The dApp uses the SDK; users prove through the app today and a wallet-native flow later.",
+      title: "The dApp uses the SDK; users prove through the app today, with a path to wallet-native UX.",
       screenTitle: "Private Dojang Pass",
       cardLabels: ["Verified Address", "Verified Balance"],
       cardNames: ["Upbit Korea", "Threshold proof"],
@@ -212,7 +212,7 @@ const copy = {
         "Dojang schema analysis, circuit design, verifier architecture, proof-of-concept on testnet.",
         "End-to-end proof flow via ZKProofport app + SDK on GIWA Sepolia. If wallet team collaboration is available, begin in-app integration.",
         "User testing, edge case hardening, developer documentation, and integration guide for GIWA builders.",
-        "Live demo at Korea Blockchain Week: app-based proof, wallet-native path, and balance threshold preview.",
+        "Live demo at Korea Blockchain Week: app-based proof, wallet-native path, KYC and balance proof without revealing the address.",
       ],
     },
     team: {
