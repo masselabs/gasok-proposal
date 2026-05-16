@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ZKProofport - Private Dojang Pass for GIWA</title>
+    <meta
+      name="description"
+      content="An interactive GASOK application deck for ZKProofport's Private Dojang Pass."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="deck-shell" data-slide-index="0">
+      <aside class="rail" aria-label="Slide navigation">
+        <div class="rail-brand">
+          <img src="./assets/zkproofport-logo.png" alt="ZKProofport logo" />
+          <div>
+            <strong>ZKProofport</strong>
+            <span></span>
+          </div>
+        </div>
+        <div class="language-switch" role="group" aria-label="Language selector">
+          <button type="button" class="lang-button active" data-lang="en">EN</button>
+          <button type="button" class="lang-button" data-lang="ko">KO</button>
+        </div>
+        <nav class="slide-nav" id="slideNav"></nav>
+        <label class="mobile-jump" for="mobileSlideSelect">
+          <span>Slide</span>
+          <select id="mobileSlideSelect" aria-label="Jump to slide"></select>
+        </label>
+      </aside>
+
+      <main class="stage" id="stage">
+        <section class="slide cover active" data-title="Proposal">
+          <div class="slide-grid cover-grid">
+            <div class="cover-copy">
+              <p class="eyebrow">GASOK / GIWA Acceleration Application</p>
+              <h1>Private Dojang Pass for GIWA Wallet</h1>
+              <p class="lede">
+                Dojang's trust, without the exposure. Zero-knowledge proofs,
+                native to GIWA Wallet.
+              </p>
+              <div class="cover-tags" aria-label="Project summary tags">
+                <span>Dojang</span>
+                <span>GIWA Wallet</span>
+                <span>Wallet Privacy</span>
+                <span>ZK Proofs</span>
+              </div>
+            </div>
+            <div class="passport">
+              <div class="passport-top">
+                <span>PRIVATE</span>
+                <strong>DOJANG</strong>
+              </div>
+              <div class="passport-stamp">
+                <span>Verified Address</span>
+                <b>Proof, not exposure</b>
+              </div>
+              <div class="passport-lines">
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+              </div>
+              <div class="passport-brand">ZKProofport</div>
+              <div class="passport-bottom">
+                <span>Issuer: Upbit Korea</span>
+                <span>Verifier: GIWA dApps</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide problem" data-title="Problem">
+          <div class="slide-header">
+            <p class="eyebrow">Problem</p>
+            <h2>Dojang is useful because it is trusted. It becomes sensitive when every dApp reads it directly.</h2>
+          </div>
+          <div class="before-after">
+            <article class="comparison-card before">
+              <span>Before</span>
+              <h3>Direct address checks</h3>
+              <p>
+                A dApp checks a wallet against Dojang and may connect KYC
+                status, balance conditions, and app behavior to the same public
+                wallet graph.
+              </p>
+            </article>
+            <article class="comparison-card after">
+              <span>After</span>
+              <h3>Private proof checks</h3>
+              <p>
+                A dApp verifies a proof that one condition is true. The source
+                wallet, exact balance, and personal identity stay private.
+              </p>
+            </article>
+          </div>
+          <aside class="problem-note">
+            <b>Why this matters:</b> the more useful Dojang becomes for DeFi,
+            RWA, quests, and verified communities, the more important selective
+            disclosure becomes.
+          </aside>
+        </section>
+
+        <section class="slide solution" data-title="Solution">
+          <div class="slide-header">
+            <p class="eyebrow">Solution</p>
+            <h2>Make Dojang proofs private and wallet-friendly, with a path to GIWA Wallet-native UX.</h2>
+          </div>
+          <div class="proof-pipeline" aria-label="Private Dojang Pass structure">
+            <div class="pipe-node issuer">
+              <small>Issuer and trust source</small>
+              <strong>Upbit / Dojang</strong>
+              <span>Verified Address and Verified Balance attestations</span>
+            </div>
+            <div class="pipe-arrow" aria-hidden="true"></div>
+            <div class="pipe-node proof wallet-privacy-node">
+              <small>User proof surface</small>
+              <strong>ZKProofport App / GIWA Wallet</strong>
+              <span>Mobile proving, approval UX, selective disclosure</span>
+              <div class="embedded-layer">
+                <b>Progressive integration</b>
+                <p>Private Dojang Pass can run today through the ZKProofport mobile app and @zkproofport/giwa SDK. The same proof request and verifier model can later be embedded into GIWA Wallet for the smoothest user experience.</p>
+              </div>
+            </div>
+            <div class="pipe-arrow" aria-hidden="true"></div>
+            <div class="pipe-node app">
+              <small>dApp integration</small>
+              <strong>GIWA dApps</strong>
+              <span>SDK requests and GIWA verifier contracts consume the proof</span>
+            </div>
+          </div>
+          <div class="claim-strip">
+            <article>
+              <b>dApp learns</b>
+              <p>KYC passed, balance threshold met, purpose-bound nullifier, verification result</p>
+            </article>
+            <article>
+              <b>dApp does not learn</b>
+              <p>source wallet, exact balance, attestation raw data, personal identity</p>
+            </article>
+            <article>
+              <b>Integration path</b>
+              <p>Works today with the ZKProofport app and SDK, then moves toward a GIWA Wallet-native flow</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="slide wallet" data-title="Wallet Flow">
+          <div class="slide-header compact">
+            <p class="eyebrow">Wallet flow and architecture</p>
+            <h2>The dApp uses the SDK; users prove through the app today and a wallet-native flow later.</h2>
+          </div>
+          <div class="wallet-layout">
+            <div class="phone-frame">
+              <div class="phone-bar"></div>
+              <div class="wallet-screen">
+                <div class="wallet-title">Private Dojang Pass</div>
+                <div class="wallet-card verified">
+                  <span>Verified Address</span>
+                  <b>Upbit Korea</b>
+                  <small>KYC status without wallet exposure</small>
+                </div>
+                <div class="wallet-card balance">
+                  <span>Verified Balance</span>
+                  <b>Threshold proof</b>
+                  <small>Prove enough, not the exact amount</small>
+                </div>
+                <div class="wallet-request">
+                  <span>DApp request</span>
+                  <p>Prove KYC status or balance eligibility for this action.</p>
+                  <button type="button">Generate proof</button>
+                </div>
+                <div class="wallet-disclosure">
+                  <b>Shared with dApp</b>
+                  <span>KYC: verified ✓</span>
+                  <span>Nullifier: scoped</span>
+                  <span>Wallet address: hidden</span>
+                  <span>Balance: hidden</span>
+                </div>
+              </div>
+            </div>
+            <div class="arch-map compact-map" aria-label="Wallet proof architecture">
+              <article class="arch-node user">
+                <small>dApp + SDK</small>
+                <h3>Request proof</h3>
+                <p>The dApp asks for KYC status or balance eligibility through @zkproofport/giwa.</p>
+              </article>
+              <div class="arch-arrow" aria-hidden="true"></div>
+              <article class="arch-node wallet-node">
+                <small>Proof surface</small>
+                <h3>Open app or wallet flow</h3>
+                <p>Today the user opens ZKProofport through QR or deep link. Later, the same request can become a GIWA Wallet-native approval.</p>
+              </article>
+              <div class="arch-arrow" aria-hidden="true"></div>
+              <article class="arch-node proof-node">
+                <small>ZK proof generation</small>
+                <h3>Generate proof</h3>
+                <p>The mobile app creates the proof now; the same model can move into the wallet-native surface later.</p>
+              </article>
+              <div class="arch-arrow" aria-hidden="true"></div>
+              <article class="arch-node dapp-node">
+                <small>GIWA Chain</small>
+                <h3>Verifier contract</h3>
+                <p>Proof validity is checked on GIWA.</p>
+              </article>
+              <div class="arch-arrow" aria-hidden="true"></div>
+              <article class="arch-node chain-node">
+                <small>dApp policy</small>
+                <h3>Grant access</h3>
+                <p>The dApp applies access, one-user-one-action, or threshold rules.</p>
+              </article>
+              <div class="agent-callout">
+                <b>Two integration modes</b>
+                <p><b>Available path:</b> dApp -&gt; SDK -&gt; ZKProofport app via QR/deep link -&gt; proof -&gt; GIWA verifier<br><b>Native path:</b> dApp -&gt; GIWA Wallet proof request -&gt; in-wallet proving/approval -&gt; GIWA verifier</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide credentials" data-title="Proof Types">
+          <div class="slide-header">
+            <p class="eyebrow">Dojang proof types</p>
+            <h2>Two proof types that protect what Dojang makes useful.</h2>
+          </div>
+          <div class="balance-hero">
+            <article>
+              <span>Verified Address</span>
+              <h3>Privacy-preserving KYC proof</h3>
+              <p>The current PoC proves KYC status from a trusted Dojang credential without exposing the source wallet or identity graph.</p>
+            </article>
+            <article>
+              <span>Verified Balance</span>
+              <h3>Privacy-preserving threshold proof</h3>
+              <p>Verified Balance follows the same privacy model next, letting dApps check thresholds without learning exact amounts or wallet history.</p>
+            </article>
+          </div>
+          <div class="credential-table">
+            <div class="table-row table-head">
+              <span>Proof type</span>
+              <span>What dApp learns</span>
+              <span>What stays private</span>
+            </div>
+            <div class="table-row accent-green">
+              <span>Verified Address / KYC</span>
+              <span>User is verified by an approved Dojang issuer</span>
+              <span>wallet address, identity graph, raw attestation</span>
+            </div>
+            <div class="table-row accent-yellow">
+              <span>Verified Balance</span>
+              <span>User meets a threshold or eligibility rule</span>
+              <span>exact balance, asset history, source wallet</span>
+            </div>
+            <div class="table-row accent-blue">
+              <span>Shared primitive</span>
+              <span>condition result, scope, nullifier, verifier result</span>
+              <span>personal identity and reusable cross-dApp identity links</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide build" data-title="Build Scope">
+          <div class="slide-header">
+            <p class="eyebrow">Build scope</p>
+            <h2>What we will build during GASOK.</h2>
+          </div>
+          <aside class="problem-note build-priority">
+            We will ship a narrow end-to-end flow first: privacy-preserving KYC proof, GIWA verifier, SDK request, and one showcase dApp. Balance threshold proof follows the same model as the next expansion.
+          </aside>
+          <div class="deliverables">
+            <article>
+              <span class="deliverable-code">CIRCUIT</span>
+              <h3>Dojang proof circuits</h3>
+              <p>Privacy-preserving KYC proof path first, with balance threshold proof using the same model.</p>
+            </article>
+            <article>
+              <span class="deliverable-code">CONTRACT</span>
+              <h3>GIWA verifier contracts</h3>
+              <p>Verifier contracts deployed on GIWA Sepolia for dApp-side proof checks.</p>
+            </article>
+            <article>
+              <span class="deliverable-code">SDK</span>
+              <h3>@zkproofport/giwa</h3>
+              <p>dApps request proofs and verify against GIWA contracts without circuit-specific code.</p>
+            </article>
+            <article>
+              <span class="deliverable-code">WALLET</span>
+              <h3>Wallet-compatible proof request flow</h3>
+              <p>A proof request flow that works through the ZKProofport mobile app today and can be adapted into a GIWA Wallet-native approval experience.</p>
+            </article>
+            <article>
+              <span class="deliverable-code">MOBILE</span>
+              <h3>mopro mobile proving</h3>
+              <p>Client-side proof generation and local verification checks on mobile without exposing private Dojang data to dApps.</p>
+            </article>
+            <article>
+              <span class="deliverable-code">dApp</span>
+              <h3>Showcase dApp</h3>
+              <p>A testnet dApp that demonstrates privacy-preserving verified access and balance-threshold eligibility.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="slide traction" data-title="Existing Proof">
+          <div class="slide-header">
+            <p class="eyebrow">Existing proof</p>
+            <h2>We are adapting working infrastructure, not starting from zero.</h2>
+          </div>
+          <div class="evidence-grid">
+            <article>
+              <span>EAS / KYC proof PoC</span>
+              <h3>Working EAS-based proof path</h3>
+              <p>We have experience with Ethereum Attestation Service (EAS)-based systems and circuit implementation. KYC attestation proofs already work across proof generation and verifier contract flow.</p>
+            </article>
+            <article>
+              <span>mopro mobile proving</span>
+              <h3>Client-side proofs on mobile</h3>
+              <p>We already have mobile client-side proving experience using mopro and React Native runtime integration.</p>
+            </article>
+            <article>
+              <span>Aztec / Noir grant</span>
+              <h3>Circuit implementation recognized</h3>
+              <p>Aztec / Noir grant support validates our circuit implementation capability.</p>
+            </article>
+            <article>
+              <span>Agent path</span>
+              <h3>Automation-ready proof model</h3>
+              <p>Agents can request credential proofs and rely on the same verifier contract model.</p>
+            </article>
+          </div>
+          <div class="proof-ledger">
+            <span>Aztec / Noir grant</span>
+            <span>EAS attestation system experience</span>
+            <span>mopro mobile proving capability</span>
+          </div>
+        </section>
+
+        <section class="slide roadmap" data-title="GASOK Plan">
+          <div class="slide-header">
+            <p class="eyebrow">GASOK execution plan</p>
+            <h2>A phased plan that works now and gets closer to wallet-native UX.</h2>
+          </div>
+          <div class="timeline">
+            <article>
+              <time>May</time>
+              <h3>Fit and design</h3>
+              <p>Dojang schema mapping, wallet proof UX, verifier design, first dApp use case.</p>
+            </article>
+            <article>
+              <time>Jun-Jul</time>
+              <h3>MVP and testnet</h3>
+              <p>SDK + ZKProofport app proof flow on GIWA Sepolia.</p>
+            </article>
+            <article>
+              <time>Aug-Sep</time>
+              <h3>Productize</h3>
+              <p>GIWA Wallet-compatible UX and integration feedback.</p>
+            </article>
+            <article>
+              <time>Oct</time>
+              <h3>KBW demo</h3>
+              <p>Demo the mobile app flow, with a clear path to GIWA Wallet-native integration.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="slide team" data-title="Team">
+          <div class="slide-header">
+            <p class="eyebrow">Team</p>
+            <h2>A small technical team that already built across the full stack.</h2>
+          </div>
+          <div class="team-grid">
+            <article class="person">
+              <img src="./assets/team-hyunsu.png" alt="Hyunsu Young profile" />
+              <div>
+                <span>Co-founder</span>
+                <h3>Hyunsu Young</h3>
+                <p>
+                  Ethereum Remix IDE core contributor, former DSRV lead
+                  engineer, Aztec Genesis Sequencer operator. Leads product,
+                  ecosystem strategy, developer UX, and protocol integration.
+                </p>
+              </div>
+            </article>
+            <article class="person">
+              <img src="./assets/team-jehyuk.png" alt="Jehyuk Hyun profile" />
+              <div>
+                <span>Co-founder</span>
+                <h3>Jehyuk Hyun</h3>
+                <p>
+                  KAIST-trained engineer, former NHN Cloud team lead and Tmax
+                  Soft engineer. Leads backend systems, circuit integration,
+                  cloud infrastructure, and production reliability.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div class="team-close">
+            <b>Why GASOK matters to us</b>
+            <p>
+              We want ZKProofport to become the privacy layer that makes Dojang
+              more useful for GIWA users and easier for GIWA dApp builders to
+              adopt. GASOK gives us the technical alignment, ecosystem feedback,
+              and wallet-compatible integration feedback needed to turn this
+              into a GIWA-native product.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="controls" aria-label="Deck controls">
+        <button class="nav-button" id="prevBtn" type="button" aria-label="Previous slide">
+          <span aria-hidden="true">&larr;</span>
+        </button>
+        <div class="counter" aria-live="polite">
+          <span id="currentSlide">01</span>
+          <span>/</span>
+          <span id="totalSlides">09</span>
+        </div>
+        <button class="nav-button" id="nextBtn" type="button" aria-label="Next slide">
+          <span aria-hidden="true">&rarr;</span>
+        </button>
+      </footer>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
