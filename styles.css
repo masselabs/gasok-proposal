@@ -1428,50 +1428,52 @@ p {
 
 .demo-layout {
   display: grid;
-  grid-template-columns: minmax(280px, 0.45fr) minmax(0, 1fr);
-  gap: 24px;
-  margin-bottom: 24px;
+  grid-template-columns: 300px 1fr;
+  gap: 28px;
+  margin-bottom: 28px;
+  align-items: start;
 }
 
 .demo-video-area {
   display: flex;
-  align-items: stretch;
+  justify-content: center;
+  position: sticky;
+  top: 20px;
 }
 
-.demo-video-placeholder {
-  width: 100%;
-  min-height: 420px;
-  border: 2px solid var(--ink);
-  border-radius: var(--radius);
-  background:
-    repeating-linear-gradient(
-      45deg,
-      transparent 0,
-      transparent 12px,
-      rgba(21, 22, 26, 0.03) 12px,
-      rgba(21, 22, 26, 0.03) 24px
-    ),
-    var(--white);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
+.demo-phone-frame {
+  width: 280px;
+  aspect-ratio: 9 / 19.5;
+  border: 3px solid var(--ink);
+  border-radius: 28px;
+  overflow: hidden;
+  background: #000;
   box-shadow: 8px 8px 0 var(--blue);
 }
 
-.demo-play-icon {
-  width: 72px;
-  height: 72px;
-  border: 3px solid var(--ink);
-  border-radius: 50%;
-  background: var(--green);
-  color: var(--white);
+.demo-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.demo-details {
   display: grid;
-  place-items: center;
-  font-size: 1.6rem;
-  padding-left: 4px;
-  box-shadow: 4px 4px 0 var(--ink);
+  gap: 16px;
+  align-content: start;
+}
+
+.demo-note {
+  border: 2px solid var(--ink);
+  border-left: 6px solid var(--blue);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  background: var(--blue-soft);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--ink);
+  box-shadow: 4px 4px 0 var(--blue);
 }
 
 .demo-video-label {
@@ -1480,11 +1482,6 @@ p {
   font-weight: 700;
 }
 
-.demo-details {
-  display: grid;
-  gap: 18px;
-  align-content: start;
-}
 
 .demo-setup,
 .demo-flow {
@@ -1563,6 +1560,95 @@ p {
   place-items: center;
   font-size: 0.72rem;
   font-weight: 900;
+}
+
+/* ── Deployed contracts ── */
+
+.deployed-contracts {
+  margin-bottom: 24px;
+}
+
+.deployed-contracts > b {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+  color: var(--ink);
+}
+
+.contract-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.contract-card {
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: var(--white);
+  display: grid;
+  gap: 6px;
+  align-content: start;
+}
+
+.contract-card.contract-eas {
+  border-left: 6px solid var(--yellow);
+  box-shadow: 6px 6px 0 var(--yellow);
+}
+
+.contract-card.contract-verifier {
+  border-left: 6px solid var(--green);
+  box-shadow: 6px 6px 0 var(--green);
+}
+
+
+.contract-label {
+  font-size: 0.74rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--red);
+}
+
+.contract-desc {
+  font-size: 0.86rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.contract-address {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  padding: 8px 12px;
+  border: 1px solid var(--ink);
+  border-radius: 6px;
+  background: rgba(255, 253, 247, 0.6);
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.contract-address:hover {
+  background: var(--yellow-soft);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.contract-verified {
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 900;
+  color: var(--green);
+  white-space: nowrap;
+  margin-left: auto;
 }
 
 /* ── Appendix A: Tech Architecture ── */
@@ -1873,8 +1959,9 @@ p {
     grid-row: auto;
   }
 
-  .demo-layout {
-    grid-template-columns: 1fr;
+
+  .contract-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
   .tech-pipeline {
@@ -2153,8 +2240,12 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .demo-video-placeholder {
-    min-height: 300px;
+  .demo-phone-frame {
+    width: 220px;
+  }
+
+  .contract-grid {
+    grid-template-columns: 1fr;
   }
 
   .tech-pipeline {

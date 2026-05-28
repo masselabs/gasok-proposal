@@ -429,7 +429,7 @@
               <ul>
                 <li>Rust-based prover compiled for iOS and Android</li>
                 <li>UltraHonk proof system with low memory mode</li>
-                <li>30–60 seconds on-device proof generation</li>
+                <li>3–10 seconds on-device proof generation</li>
                 <li>Circuit files downloaded and cached at runtime</li>
               </ul>
             </article>
@@ -440,7 +440,7 @@
                 <li>Auto-generated Solidity from Noir circuit</li>
                 <li>verify(bytes proof, bytes32[] publicInputs) → bool</li>
                 <li>View function call — no gas cost for verification</li>
-                <li>Deployed on Base Sepolia and Base Mainnet</li>
+                <li>Deployed on Giwa Network</li>
               </ul>
             </article>
           </div>
@@ -469,12 +469,22 @@
           </div>
           <div class="demo-layout">
             <div class="demo-video-area">
-              <div class="demo-video-placeholder">
-                <div class="demo-play-icon" aria-hidden="true">▶</div>
-                <span class="demo-video-label">Demo video will be embedded here</span>
+              <div class="demo-phone-frame">
+                <video
+                  class="demo-video"
+                  src="./assets/dojang.MP4"
+                  controls
+                  playsinline
+                  preload="metadata"
+                >
+                  <span class="demo-video-label">Your browser does not support the video tag.</span>
+                </video>
               </div>
             </div>
             <div class="demo-details">
+              <aside class="demo-note">
+                This demo runs on a testnet environment that mirrors mainnet conditions: real EAS attestations, real proof generation, and real on-chain verification.
+              </aside>
               <article class="demo-setup">
                 <b>Demo environment</b>
                 <ul>
@@ -495,9 +505,27 @@
               </article>
             </div>
           </div>
-          <aside class="problem-note">
-            This demo runs on a testnet environment that mirrors mainnet conditions: real EAS attestations, real proof generation, and real on-chain verification.
-          </aside>
+          <div class="deployed-contracts">
+            <b>Deployed &amp; verified contracts on GIWA Sepolia</b>
+            <div class="contract-grid">
+              <article class="contract-card contract-eas">
+                <span class="contract-label">EAS</span>
+                <p class="contract-desc">Ethereum Attestation Service</p>
+                <a class="contract-address" href="https://sepolia-explorer.giwa.io/address/0x6646d970499bbed728636823a5a7e551e811b414" target="_blank" rel="noopener noreferrer">
+                  0x6646…b414
+                  <span class="contract-verified">✓ Verified</span>
+                </a>
+              </article>
+              <article class="contract-card contract-verifier">
+                <span class="contract-label">Verifier</span>
+                <p class="contract-desc">On-chain proof verifier</p>
+                <a class="contract-address" href="https://sepolia-explorer.giwa.io/address/0xeb9eb5452790cfe549ff83ceb3dbe1c432231492" target="_blank" rel="noopener noreferrer">
+                  0xeb9e…1492
+                  <span class="contract-verified">✓ Verified</span>
+                </a>
+              </article>
+            </div>
+          </div>
         </section>
       </main>
 
