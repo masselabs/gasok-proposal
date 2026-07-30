@@ -15,17 +15,17 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="../" aria-label="ZKProofport for GIWA 홈">
+      <a target="_blank" rel="noreferrer" class="brand" href="../" aria-label="ZKProofport for GIWA 홈">
         <img src="../assets/zkproofport-logo.png" alt="" />
         <span><strong>ZKProofport</strong><small>for GIWA</small></span>
       </a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="siteNav">메뉴</button>
       <nav class="site-nav" id="siteNav" aria-label="주요 메뉴">
-        <a href="../demo/">MVP</a>
-        <a class="active" href="./">기술 문서</a>
-        <a href="../contracts/">구현 자료</a>
-        <a href="../team/">팀</a>
-        <a href="../deck/">피치덱</a>
+        <a target="_blank" rel="noreferrer" href="../demo/">MVP</a>
+        <a target="_blank" rel="noreferrer" class="active" href="./">기술 문서</a>
+        <a target="_blank" rel="noreferrer" href="../contracts/">구현 자료</a>
+        <a target="_blank" rel="noreferrer" href="../team/">팀</a>
+        <a target="_blank" rel="noreferrer" href="../deck/">피치덱</a>
       </nav>
     </header>
 
@@ -40,8 +40,8 @@
             받거나 보관할 필요가 없습니다.
           </p>
           <div class="hero-actions button-row">
-            <a class="button primary" href="../demo/">MVP 확인</a>
-            <a class="button" href="../contracts/">구현 자료</a>
+            <a target="_blank" rel="noreferrer" class="button primary" href="../demo/">MVP 확인</a>
+            <a target="_blank" rel="noreferrer" class="button" href="../contracts/">구현 자료</a>
           </div>
         </div>
       </section>
@@ -50,15 +50,15 @@
         <div class="content-grid wrap">
           <p class="section-no">01 / PROBLEM</p>
           <div class="content-body">
-            <h2>Dojang 자격을 직접 조회할 때 생기는 노출</h2>
+            <h2>Dojang 데이터를 지갑 주소로 직접 조회할 때</h2>
             <p>
-              Dojang은 신뢰할 수 있는 오프체인 정보를 온체인 자격으로 연결합니다.
-              하지만 dApp이 자격이 발급된 지갑을 직접 확인하면 해당 지갑의 이용
+              Dojang은 신뢰할 수 있는 오프체인 정보를 온체인 인증 데이터로 연결합니다.
+              하지만 dApp이 인증 데이터가 발급된 지갑을 직접 확인하면 해당 지갑의 이용
               기록과 인증 상태가 연결될 수 있습니다. Verified Balance처럼 값이 포함된
-              자격은 서비스가 실제로 필요한 범위보다 많은 정보를 보여줄 수도 있습니다.
+              정보는 서비스가 실제로 필요한 범위보다 많은 내용을 보여줄 수도 있습니다.
             </p>
             <p>
-              ZKProofport는 발급된 신뢰를 그대로 활용하면서, dApp에는 정책 판단에
+              ZKProofport는 Dojang에서 발급된 신뢰를 그대로 활용하면서, dApp에는 정책 판단에
               필요한 결과만 전달합니다.
             </p>
           </div>
@@ -92,7 +92,7 @@
               </article>
             </div>
             <ol class="status-list" style="margin-top: 30px">
-              <li><b>01</b><span>dApp이 필요한 자격과 서비스별 scope를 요청합니다.</span></li>
+              <li><b>01</b><span>dApp이 필요한 검증 항목과 서비스별 scope를 요청합니다.</span></li>
               <li><b>02</b><span>사용자 기기에서 지갑 소유권과 attestation의 유효성을 확인합니다.</span></li>
               <li><b>03</b><span>Noir 회로가 private inputs를 사용해 UltraHonk proof를 생성합니다.</span></li>
               <li><b>04</b><span>GIWA의 verifier가 proof와 public inputs만으로 결과를 확인합니다.</span></li>
@@ -105,7 +105,7 @@
         <div class="content-grid wrap">
           <p class="section-no">03 / PRIVACY</p>
           <div class="content-body">
-            <h2>원본 데이터를 보지 않는 검증 경계</h2>
+            <h2>dApp이 확인하는 결과와<br />사용자 기기에 남는 정보</h2>
             <div class="privacy-table">
               <article>
                 <h3>dApp이 확인하는 것</h3>
@@ -119,7 +119,7 @@
               <article class="private">
                 <h3>사용자 기기에 남는 것</h3>
                 <ul>
-                  <li>자격이 발급된 원본 지갑 주소</li>
+                  <li>Dojang 데이터가 발급된 원본 지갑 주소</li>
                   <li>raw attestation transaction</li>
                   <li>지갑 서명과 public key</li>
                   <li>개인 신원과 정확한 자산 정보</li>
@@ -156,16 +156,16 @@
               <article><strong>GIWA verifier</strong><span>GIWA Sepolia에 배포한 Solidity verifier</span></article>
             </div>
             <div class="button-row">
-              <a class="button primary" href="../contracts/">구현 자료 한눈에 보기</a>
+              <a target="_blank" rel="noreferrer" class="button primary" href="../contracts/">구현 자료 한눈에 보기</a>
             </div>
             <div class="sdk-foundation">
               <strong>dApp 연동 기반</strong>
               <span>
                 공개 SDK에는 proof request, QR·딥링크, proof 전달, 온체인 검증 흐름이
-                구현되어 있습니다. GIWA 회로 타입과 배포 설정은 공식 Dojang 연동 단계에서
+                구현되어 있습니다. GIWA 회로 타입과 배포 설정은 공식 Dojang 데이터 연동 단계에서
                 추가합니다.
               </span>
-              <a class="button" href="../contracts/">구현 자료</a>
+              <a target="_blank" rel="noreferrer" class="button" href="../contracts/">구현 자료</a>
             </div>
           </div>
         </div>
@@ -175,7 +175,7 @@
         <div class="content-grid wrap">
           <p class="section-no">06 / BOUNDARY</p>
           <div class="content-body">
-            <h2>공식 Dojang 연동 지점</h2>
+            <h2>Production 단계: 공식 Dojang 데이터 연동</h2>
             <div class="notice">
               <strong>현재 PoC는 Dojang 발급 이후의 ZK 증명 파이프라인을 검증합니다.</strong>
               공식 Dojang의 Verified Address는 사용자가 KYC를 완료한 뒤 업비트가 발급하는
@@ -196,7 +196,7 @@
               초기에는 독립 앱과 SDK로 빠르게 dApp 연동을 시작합니다. 공식 Dojang
               데이터를 연결한 뒤에는 증명 요청·동의·생성을 GIWA Wallet 안에 통합합니다.
               dApp은 같은 요청 규격을 유지하면서 Verified Address, Balance, Code 등
-              새로운 자격 회로를 계속 추가할 수 있습니다.
+              새로운 검증 회로를 계속 추가할 수 있습니다.
             </p>
             <ul class="plain-list">
               <li><b>01</b><span>테스트 attester를 사용한 GIWA Sepolia PoC — 구현 완료</span></li>
@@ -212,8 +212,8 @@
       <div class="wrap footer-grid">
         <div><strong>ZKProofport</strong><p>Technical One-Pager · GASOK 2026</p></div>
         <div class="footer-links">
-          <a href="../">제출 허브</a>
-          <a href="../demo/">MVP</a>
+          <a target="_blank" rel="noreferrer" href="../">제출 허브</a>
+          <a target="_blank" rel="noreferrer" href="../demo/">MVP</a>
           <a href="https://github.com/zkproofport" target="_blank" rel="noreferrer">GitHub</a>
         </div>
         <p class="footer-meta">Noir · mopro · UltraHonk · GIWA Sepolia</p>

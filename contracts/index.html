@@ -15,17 +15,17 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="../" aria-label="ZKProofport for GIWA 홈">
+      <a target="_blank" rel="noreferrer" class="brand" href="../" aria-label="ZKProofport for GIWA 홈">
         <img src="../assets/zkproofport-logo.png" alt="" />
         <span><strong>ZKProofport</strong><small>for GIWA</small></span>
       </a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="siteNav">메뉴</button>
       <nav class="site-nav" id="siteNav" aria-label="주요 메뉴">
-        <a href="../demo/">MVP</a>
-        <a href="../one-pager/">기술 문서</a>
-        <a class="active" href="./">구현 자료</a>
-        <a href="../team/">팀</a>
-        <a href="../deck/">피치덱</a>
+        <a target="_blank" rel="noreferrer" href="../demo/">MVP</a>
+        <a target="_blank" rel="noreferrer" href="../one-pager/">기술 문서</a>
+        <a target="_blank" rel="noreferrer" class="active" href="./">구현 자료</a>
+        <a target="_blank" rel="noreferrer" href="../team/">팀</a>
+        <a target="_blank" rel="noreferrer" href="../deck/">피치덱</a>
       </nav>
     </header>
 
@@ -35,8 +35,8 @@
         <div>
           <h1>Dojang 데이터에서<br />GIWA 검증까지</h1>
           <p class="lede">
-            Dojang이 발급한 자격 데이터를 ZKProofport 회로가 검증합니다.
-            사용자는 원본 지갑과 attestation을 공개하지 않고 proof를 만들며,
+            Dojang이 발급한 인증 데이터를 ZKProofport 회로가 검증합니다.
+            사용자는 원본 지갑 주소와 attestation을 공개하지 않고 proof를 만들며,
             GIWA verifier는 그 proof만 확인합니다. 현재 PoC에서는 발급 단계에
             테스트 attester를 사용합니다.
           </p>
@@ -70,7 +70,7 @@
               </article>
             </div>
             <ol class="status-list" style="margin-top: 30px">
-              <li><b>01</b><span>Dojang이 Verified Address나 Balance 같은 자격 데이터를 발급합니다.</span></li>
+              <li><b>01</b><span>Dojang이 Verified Address나 Balance 같은 인증 데이터를 발급합니다.</span></li>
               <li><b>02</b><span>ZKProofport 회로가 attestation, 발급자와 지갑 소유권을 private input으로 확인합니다.</span></li>
               <li><b>03</b><span>모바일 기기에서 조건 충족 여부만 담은 ZK proof를 생성합니다.</span></li>
               <li><b>04</b><span>GIWA verifier가 원본 Dojang 데이터 없이 proof의 유효성을 검증합니다.</span></li>
@@ -164,16 +164,17 @@
         <div class="content-grid wrap">
           <p class="section-no">04 / DOJANG</p>
           <div class="content-body">
-            <h2>공식 Dojang 연동 지점</h2>
+            <h2>Production 단계: 공식 Dojang 데이터 연동</h2>
             <div class="notice">
               <strong>PoC에서 검증한 범위는 발급 이후의 ZK 증명 파이프라인입니다.</strong>
-              공식 Dojang 연동에서는 테스트 attester를 운영 발급 데이터로 바꾸고,
-              실제 발급자 주소, schema와 정책을 회로의 검증 규칙에 반영합니다.
+              PoC에서는 테스트 attester로 mock EAS 데이터를 등록했습니다. 공식 Dojang
+              데이터 연동 단계에서는 이를 실제 발급 데이터로 바꾸고, 발급자 주소,
+              schema와 정책을 회로의 검증 규칙에 반영합니다.
               이후 모바일 prover와 GIWA verifier 구조는 같은 역할을 이어갑니다.
             </div>
             <div class="button-row">
-              <a class="button primary" href="../demo/">실제 구동 영상</a>
-              <a class="button" href="../one-pager/">기술 구조</a>
+              <a target="_blank" rel="noreferrer" class="button primary" href="../demo/">실제 구동 영상</a>
+              <a target="_blank" rel="noreferrer" class="button" href="../one-pager/">기술 구조</a>
             </div>
           </div>
         </div>
@@ -184,7 +185,7 @@
       <div class="wrap footer-grid">
         <div><strong>ZKProofport</strong><p>Dojang data → ZK proof → GIWA verification.</p></div>
         <div class="footer-links">
-          <a href="../">제출 허브</a><a href="../demo/">MVP</a><a href="../one-pager/">기술 문서</a>
+          <a target="_blank" rel="noreferrer" href="../">제출 허브</a><a target="_blank" rel="noreferrer" href="../demo/">MVP</a><a target="_blank" rel="noreferrer" href="../one-pager/">기술 문서</a>
         </div>
         <p class="footer-meta">Chain ID 91342 · GIWA Sepolia</p>
       </div>

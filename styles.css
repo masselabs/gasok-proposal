@@ -758,6 +758,10 @@ a {
   background: var(--white);
 }
 
+.content-body > .notice + .video-guide {
+  margin-top: 18px;
+}
+
 .video-guide > p {
   margin: 0 0 18px;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
