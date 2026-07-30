@@ -56,7 +56,7 @@
 
 현재 많은 서비스가 인증 과정에서 필요 이상의 개인정보를 수집하고 보관합니다. 정보가 쌓일수록 유출 위험과 관리 책임도 커집니다. ZKProofport를 사용하면 dApp은 원본 인증 데이터를 받지 않고도 KYC 완료 여부나 특정 조건 충족 여부를 확인할 수 있습니다. 서비스는 민감정보 관리 부담을 줄이고, 사용자는 자신의 프라이버시를 지킬 수 있습니다.
 
-저희는 Coinbase EAS 기반 KYC 증명 회로, 모바일 기기 내 증명 생성, Solidity verifier와 dApp 연동 SDK를 이미 구현했습니다. GIWA Sepolia에서는 전용 회로, 모바일 prover와 verifier를 연결한 PoC가 동작하고 있습니다. GASOK을 통해 공식 Dojang 발급 데이터와 GIWA Wallet을 연동해, 실제 GIWA dApp이 쉽게 사용할 수 있는 프라이버시 인프라로 완성하고자 합니다.</div>
+저희는 Coinbase EAS 기반 KYC 증명 서킷, 모바일 기기 내 증명 생성, Solidity verifier와 dApp 연동 SDK를 이미 구현했습니다. GIWA Sepolia에서는 전용 서킷, 모바일 prover와 verifier를 연결한 PoC가 동작하고 있습니다. GASOK을 통해 공식 Dojang 발급 데이터와 GIWA Wallet을 연동해, 실제 GIWA dApp이 쉽게 사용할 수 있는 프라이버시 인프라로 완성하고자 합니다.</div>
             </article>
 
             <article class="answer-card">
@@ -74,7 +74,7 @@
             <article class="answer-card">
               <h2>공식 프로그램 혜택 외 희망하는 GASOK 지원 사항</h2>
               <button class="copy-button" type="button" data-copy-target="support">복사</button>
-              <div class="answer" id="support">첫째, 공식 Dojang의 Verified Address와 Verified Balance를 실제 테스트할 수 있도록 테스트용 Dojang 데이터 발급 또는 기술 연동 지원을 받고 싶습니다. 현재 컨트랙트와 회로 기반 PoC는 구현되어 있으며, 공식 Verified Address는 사용자의 KYC와 업비트 발급 절차가 필요한 운영 데이터이므로 실제 연동을 위한 발급 환경이 필요합니다.
+              <div class="answer" id="support">첫째, 공식 Dojang의 Verified Address와 Verified Balance를 실제 테스트할 수 있도록 테스트용 Dojang 데이터 발급 또는 기술 연동 지원을 받고 싶습니다. 현재 컨트랙트와 서킷 기반 PoC는 구현되어 있으며, 공식 Verified Address는 사용자의 KYC와 업비트 발급 절차가 필요한 운영 데이터이므로 실제 연동을 위한 발급 환경이 필요합니다.
 
 둘째, GIWA Wallet 안에서 증명 요청 확인, 사용자 동의, 기기 내 proof 생성이 한 번에 이어지도록 지갑 팀과 proof request 규격, SDK 통합 방식, 사용자 경험을 함께 설계하고 싶습니다. 독립 앱에서 시작하되 최종적으로는 QR이나 딥링크 전환 없이 지갑의 익숙한 승인 흐름 안에서 증명하는 것이 가장 안전하고 자연스러운 UX가 됩니다.
 
@@ -86,7 +86,7 @@
               <button class="copy-button" type="button" data-copy-target="message">복사</button>
               <div class="answer" id="message">Dojang은 GIWA 생태계에 신뢰할 수 있는 온체인 인증 데이터를 제공하는 중요한 기반입니다. 저희는 그 신뢰가 더 많은 서비스에서 쓰일수록, 원본 지갑 주소를 드러내지 않고 필요한 사실만 확인하는 방식도 함께 필요하다고 생각합니다.
 
-ZKProofport는 이를 위한 회로, 모바일 증명 생성과 온체인 verifier를 구현했고, proof request와 검증을 위한 SDK 기반도 갖췄습니다. GASOK에서는 보여주기 위한 일회성 데모가 아니라, Dojang의 여러 검증 항목을 계속 추가하고 GIWA Wallet과 dApp이 공통으로 사용할 수 있는 프라이버시 계층을 만들고자 합니다.
+ZKProofport는 이를 위한 서킷, 모바일 증명 생성과 온체인 verifier를 구현했고, proof request와 검증을 위한 SDK 기반도 갖췄습니다. GASOK에서는 보여주기 위한 일회성 데모가 아니라, Dojang의 여러 검증 항목을 계속 추가하고 GIWA Wallet과 dApp이 공통으로 사용할 수 있는 프라이버시 계층을 만들고자 합니다.
 
 신뢰와 프라이버시가 함께 작동하는 GIWA를 만들겠습니다.</div>
             </article>

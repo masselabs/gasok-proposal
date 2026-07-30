@@ -57,7 +57,7 @@
         <div class="content-grid wrap">
           <p class="section-no">01 / PROBLEM</p>
           <div class="content-body">
-            <h2>Dojang 데이터를 지갑 주소로 직접 조회할 때</h2>
+            <h2>Dojang 인증을 확인하는 과정에서<br />지갑 활동까지 드러날 수 있습니다.</h2>
             <p>
               Dojang은 신뢰할 수 있는 오프체인 정보를 온체인 인증 데이터로 연결합니다.
               하지만 dApp이 인증 데이터가 발급된 지갑을 직접 확인하면 해당 지갑의 이용
@@ -101,7 +101,7 @@
             <ol class="status-list" style="margin-top: 30px">
               <li><b>01</b><span>dApp이 필요한 검증 항목과 서비스별 scope를 요청합니다.</span></li>
               <li><b>02</b><span>사용자 기기에서 지갑 소유권과 attestation의 유효성을 확인합니다.</span></li>
-              <li><b>03</b><span>Noir 회로가 private inputs를 사용해 UltraHonk proof를 생성합니다.</span></li>
+              <li><b>03</b><span>Noir 서킷이 private inputs를 사용해 UltraHonk proof를 생성합니다.</span></li>
               <li><b>04</b><span>GIWA의 verifier가 proof와 public inputs만으로 결과를 확인합니다.</span></li>
             </ol>
           </div>
@@ -141,7 +141,7 @@
         <div class="content-grid wrap">
           <p class="section-no">04 / CIRCUIT</p>
           <div class="content-body">
-            <h2>GIWA attestation 검증 회로</h2>
+            <h2>GIWA attestation 검증 서킷</h2>
             <ul class="plain-list">
               <li><b>01</b><span>사용자의 public key에서 주소를 유도하고 지갑 서명을 검증합니다.</span></li>
               <li><b>02</b><span>attestation transaction을 파싱하고 허용된 발급자의 서명을 확인합니다.</span></li>
@@ -162,14 +162,11 @@
               <article><strong>Mobile prover</strong><span>React Native · mopro · on-device proving</span></article>
               <article><strong>GIWA verifier</strong><span>GIWA Sepolia에 배포한 Solidity verifier</span></article>
             </div>
-            <div class="button-row">
-              <a target="_blank" rel="noreferrer" class="button primary" href="../contracts/">구현 자료 한눈에 보기</a>
-            </div>
             <div class="sdk-foundation">
               <strong>dApp 연동 기반</strong>
               <span>
                 공개 SDK에는 proof request, QR·딥링크, proof 전달, 온체인 검증 흐름이
-                구현되어 있습니다. GIWA 회로 타입과 배포 설정은 공식 Dojang 데이터 연동 단계에서
+                구현되어 있습니다. GIWA 서킷 타입과 배포 설정은 공식 Dojang 데이터 연동 단계에서
                 추가합니다.
               </span>
               <a target="_blank" rel="noreferrer" class="button" href="../contracts/">구현 자료</a>
@@ -187,7 +184,7 @@
               <strong>현재 PoC는 Dojang 발급 이후의 ZK 증명 파이프라인을 검증합니다.</strong>
               공식 Dojang의 Verified Address는 사용자가 KYC를 완료한 뒤 업비트가 발급하는
               운영 데이터입니다. PoC에서는 발급 단계에 테스트 attester를 사용하고,
-              회로·모바일 증명·verifier 흐름을 구현했습니다. Production 단계에서 발급자
+              서킷·모바일 증명·verifier 흐름을 구현했습니다. Production 단계에서 발급자
               주소, schema와 정책을 공식 Dojang 데이터에 맞춰 연결합니다.
             </div>
           </div>
@@ -203,7 +200,7 @@
               초기에는 독립 앱과 SDK로 빠르게 dApp 연동을 시작합니다. 공식 Dojang
               데이터를 연결한 뒤에는 증명 요청·동의·생성을 GIWA Wallet 안에 통합합니다.
               dApp은 같은 요청 규격을 유지하면서 Verified Address, Balance, Code 등
-              새로운 검증 회로를 계속 추가할 수 있습니다.
+              새로운 검증 서킷을 계속 추가할 수 있습니다.
             </p>
             <ul class="plain-list">
               <li><b>01</b><span>테스트 attester를 사용한 GIWA Sepolia PoC — 구현 완료</span></li>
