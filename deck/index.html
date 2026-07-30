@@ -81,22 +81,22 @@
         <section class="pitch-slide" data-title="GIWA 적합성" aria-hidden="true">
           <div class="slide-header">
             <p class="eyebrow">02 / GIWA FIT</p>
-            <h2>Dojang이 신뢰를 만들고,<br />ZKProofport가 안전하게 전달합니다.</h2>
+            <h2>Dojang 신뢰를<br />ZK proof로 전달하는 구조</h2>
           </div>
           <div class="slide-flow">
             <article>
-              <span>TRUST SOURCE</span>
-              <strong>Dojang</strong>
+              <span>TRUST DATA</span>
+              <strong>Dojang credential</strong>
             </article>
             <i>→</i>
             <article class="active">
-              <span>PRIVACY LAYER</span>
-              <strong>ZKProofport</strong>
+              <span>PRIVATE CHECK</span>
+              <strong>ZKProofport circuit</strong>
             </article>
             <i>→</i>
             <article>
-              <span>VERIFICATION</span>
-              <strong>GIWA Chain</strong>
+              <span>ONCHAIN VERIFY</span>
+              <strong>GIWA verifier</strong>
             </article>
             <i>→</i>
             <article>
@@ -126,13 +126,13 @@
         <section class="pitch-slide" data-title="MVP" aria-hidden="true">
           <div class="slide-header">
             <p class="eyebrow">03 / MVP</p>
-            <h2>GIWA 테스트넷에서<br />증명 생성과 검증이 작동합니다.</h2>
+            <h2>Dojang 입력에서<br />GIWA 검증까지</h2>
           </div>
           <div class="slide-grid-3">
             <article class="slide-card">
-              <span>01 / ATTESTATION</span>
-              <h3>GIWA test attester</h3>
-              <p>GIWA Sepolia에서 테스트용 attestation 발급</p>
+              <span>01 / DOJANG INPUT · POC</span>
+              <h3>Test attester</h3>
+              <p>PoC에서 Dojang 발급 단계의 입력 역할을 담당</p>
             </article>
             <article class="slide-card green">
               <span>02 / PROVING</span>
@@ -146,9 +146,9 @@
             </article>
           </div>
           <div class="notice" style="margin-top: 18px">
-            현재 데모는 팀이 배포한 테스트 attester를 사용합니다. 공식 Dojang
-            Verified Address는 사용자 KYC와 업비트의 발급 절차가 필요해, GASOK을
-            통해 실제 발급 데이터와의 최종 연동을 진행하고자 합니다.
+            PoC는 테스트 attester로 Dojang 발급 단계를 대체하고, attestation 확인부터
+            모바일 proof 생성, GIWA verifier 검증까지 구현했습니다. Production 단계에서
+            발급자 주소, schema와 정책을 공식 Dojang 데이터에 맞춰 연결합니다.
           </div>
         </section>
 
@@ -191,7 +191,7 @@
         <section class="pitch-slide" data-title="구현 증거" aria-hidden="true">
           <div class="slide-header">
             <p class="eyebrow">05 / EVIDENCE</p>
-            <h2>회로, 모바일 prover, verifier를<br />직접 구현하고 배포했습니다.</h2>
+            <h2>GIWA 증명 파이프라인 구현 내역</h2>
           </div>
           <div class="slide-proof">
             <div class="contract-stack">
@@ -199,33 +199,16 @@
                 <span class="contract-type">TEST ATTESTER</span>
                 <h3>0x6646…b414</h3>
                 <code>GIWA Sepolia · MockGiwaAttester</code>
-                <a
-                  class="button"
-                  href="https://sepolia-explorer.giwa.io/address/0x6646d970499bbed728636823a5a7e551e811b414"
-                  target="_blank"
-                  rel="noreferrer"
-                >Explorer →</a>
               </article>
               <article class="contract-card">
                 <span class="contract-type">ULTRAHONK VERIFIER</span>
                 <h3>0xeb9e…1492</h3>
                 <code>GIWA Sepolia · HonkVerifier</code>
-                <a
-                  class="button primary"
-                  href="https://sepolia-explorer.giwa.io/address/0xeb9eb5452790cfe549ff83ceb3dbe1c432231492"
-                  target="_blank"
-                  rel="noreferrer"
-                >Explorer →</a>
               </article>
             </div>
             <div class="button-row">
               <a class="button" href="../demo/">실제 구동 영상 보기</a>
-              <a
-                class="button"
-                href="https://github.com/zkproofport/circuits/tree/main/giwa-attestation"
-                target="_blank"
-                rel="noreferrer"
-              >회로 소스 보기</a>
+              <a class="button primary" href="../contracts/">구현 자료 한눈에 보기</a>
             </div>
           </div>
         </section>
@@ -233,7 +216,7 @@
         <section class="pitch-slide" data-title="로드맵" aria-hidden="true">
           <div class="slide-header">
             <p class="eyebrow">06 / ROADMAP</p>
-            <h2>독립 앱에서 시작해<br />GIWA Wallet의 기본 기능으로.</h2>
+            <h2>GIWA Wallet 네이티브 통합 로드맵</h2>
           </div>
           <div class="slide-grid-3">
             <article class="slide-card green">
@@ -262,14 +245,14 @@
         <section class="pitch-slide" data-title="팀과 성과" aria-hidden="true">
           <div class="slide-header">
             <p class="eyebrow">07 / TEAM</p>
-            <h2>같은 문제를 이미 풀어본<br />2인 기술 창업팀입니다.</h2>
+            <h2>ZK 회로와 제품을<br />함께 만드는 2인 팀</h2>
           </div>
           <div class="slide-team">
             <article class="slide-person">
               <img src="../assets/team-hyunsu.png" alt="현수영" />
               <div>
                 <h3>현수영</h3>
-                <p>Ethereum Remix IDE 팀 소속 엔지니어 · 한국 유일 Aztec Genesis Sequencer 운영 · 전 DSRV 리드 엔지니어</p>
+                <p>Ethereum Remix IDE 팀 엔지니어 · 한국 유일 Aztec Genesis Sequencer 운영 · 전 DSRV 리드 엔지니어</p>
               </div>
             </article>
             <article class="slide-person">
@@ -302,7 +285,7 @@
         <section class="pitch-slide" data-title="GASOK" aria-hidden="true">
           <div class="slide-header">
             <p class="eyebrow">08 / WHY GASOK</p>
-            <h2>기술 흐름은 만들었습니다.<br />이제 공식 제품으로 연결할 차례입니다.</h2>
+            <h2>공식 Dojang 연동과<br />GIWA Wallet 네이티브 통합</h2>
           </div>
           <div class="slide-grid-3">
             <article class="slide-card green">

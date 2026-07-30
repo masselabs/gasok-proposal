@@ -924,6 +924,68 @@ a {
   line-height: 1.65;
 }
 
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.resource-card {
+  display: flex;
+  min-height: 260px;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid var(--ink);
+  background: var(--white);
+  transition: transform 140ms ease, box-shadow 140ms ease;
+}
+
+.resource-card.accent {
+  background: var(--green);
+}
+
+.resource-card.dark {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.resource-card:hover,
+.resource-card:focus-visible {
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0 var(--ink);
+  outline: 0;
+}
+
+.resource-card > span {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.66rem;
+  font-weight: 800;
+}
+
+.resource-card h3 {
+  margin: 46px 0 12px;
+  font-size: 1.3rem;
+  letter-spacing: -0.035em;
+  line-height: 1.25;
+}
+
+.resource-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+.resource-card.dark p {
+  color: #c8cbc2;
+}
+
+.resource-card b {
+  margin-top: auto;
+  padding-top: 24px;
+  font-size: 0.78rem;
+}
+
 .metric-row {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1745,7 +1807,8 @@ a {
 
   .link-grid,
   .metric-row,
-  .achievement-strip {
+  .achievement-strip,
+  .resource-grid {
     grid-template-columns: 1fr;
   }
 

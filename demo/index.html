@@ -23,7 +23,7 @@
       <nav class="site-nav" id="siteNav" aria-label="주요 메뉴">
         <a class="active" href="./">MVP</a>
         <a href="../one-pager/">기술 문서</a>
-        <a href="../contracts/">컨트랙트</a>
+        <a href="../contracts/">구현 자료</a>
         <a href="../team/">팀</a>
         <a href="../deck/">피치덱</a>
       </nav>
@@ -33,10 +33,11 @@
       <section class="page-hero wrap">
         <p class="section-no">MVP / DEMO</p>
         <div>
-          <h1>모바일에서 만든 증명을<br />GIWA에서 검증합니다.</h1>
+          <h1>Dojang 자격에서<br />GIWA 검증까지</h1>
           <p class="lede">
-            테스트 attestation 발급부터 모바일 기기 내 증명 생성, GIWA Sepolia의
-            Solidity verifier 검증까지 하나의 흐름으로 구현했습니다.
+            Dojang attestation을 입력으로 받아 사용자 기기에서 ZK proof를 만들고,
+            GIWA verifier가 검증하는 전체 흐름을 구현했습니다. PoC에서는 발급 단계에
+            테스트 attester를 사용합니다.
           </p>
         </div>
       </section>
@@ -51,8 +52,8 @@
               <div class="video-steps">
                 <article>
                   <span>01</span>
-                  <strong>테스트 자격 발급</strong>
-                  <p>GIWA Sepolia의 테스트 attester가 대상 지갑에 attestation을 발급합니다.</p>
+                  <strong>Dojang 입력 재현</strong>
+                  <p>테스트 attester가 PoC에서 Dojang 자격의 입력 역할을 맡습니다.</p>
                 </article>
                 <article>
                   <span>02</span>
@@ -99,7 +100,7 @@
         <div class="content-grid wrap">
           <p class="section-no">02 / ROADMAP</p>
           <div class="content-body">
-            <h2>PoC에서 시작해<br />지갑의 기본 기능으로 확장합니다.</h2>
+            <h2>GIWA Wallet 네이티브 통합까지</h2>
             <div class="roadmap">
               <article class="current">
                 <span>PHASE 1 · NOW</span>
@@ -140,23 +141,17 @@
         <div class="content-grid wrap">
           <p class="section-no">03 / SCOPE</p>
           <div class="content-body">
-            <h2>데모의 범위</h2>
+            <h2>PoC와 공식 Dojang 연동의 구분</h2>
             <div class="notice">
-              <strong>공식 Dojang KYC attestation을 사용한 데모는 아직 진행하지 못했습니다.</strong>
-              Dojang 컨트랙트는 GIWA 테스트넷에 배포되어 있지만, 실제 Verified Address를
-              발급받으려면 사용자가 KYC를 마친 뒤 업비트의 발급 절차를 거쳐야 합니다.
-              현재 MVP는 GIWA Sepolia에 직접 배포한 테스트 attester로 동일한 증명 구조와
-              온체인 검증 흐름을 확인합니다. GASOK을 통해 공식 발급 데이터와의 최종 연동을
-              진행하고자 합니다.
+              <strong>현재 PoC는 Dojang 발급 이후의 ZK 증명 파이프라인을 검증합니다.</strong>
+              공식 Verified Address는 사용자의 KYC와 업비트의 발급 절차를 거쳐 생성되는
+              운영 데이터입니다. PoC에서는 발급 단계에 팀이 배포한 테스트 attester를
+              사용하고, attestation 확인부터 기기 내 proof 생성, GIWA verifier 검증까지
+              구현했습니다. Production 단계에서는 발급자 주소, schema와 정책을 공식
+              Dojang 데이터에 맞춰 연결합니다.
             </div>
             <div class="button-row">
-              <a class="button primary" href="../contracts/">배포 컨트랙트 확인</a>
-              <a
-                class="button"
-                href="https://github.com/zkproofport/circuits/tree/main/giwa-attestation"
-                target="_blank"
-                rel="noreferrer"
-              >회로 소스 보기</a>
+              <a class="button primary" href="../contracts/">구현 자료 한눈에 보기</a>
             </div>
           </div>
         </div>

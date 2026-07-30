@@ -23,7 +23,7 @@
       <nav class="site-nav" id="siteNav" aria-label="주요 메뉴">
         <a href="../demo/">MVP</a>
         <a class="active" href="./">기술 문서</a>
-        <a href="../contracts/">컨트랙트</a>
+        <a href="../contracts/">구현 자료</a>
         <a href="../team/">팀</a>
         <a href="../deck/">피치덱</a>
       </nav>
@@ -33,7 +33,7 @@
       <section class="page-hero wrap">
         <p class="section-no">TECHNICAL ONE-PAGER</p>
         <div>
-          <h1>Dojang 자격을<br />프라이버시 증명으로 바꿉니다.</h1>
+          <h1>Dojang 데이터가<br />ZK proof가 되는 구조</h1>
           <p class="lede">
             ZKProofport는 인증 데이터를 발급하는 계층과 이를 사용하는 dApp 사이에서
             필요한 사실만 영지식 증명으로 전달합니다. dApp은 원본 인증 데이터를
@@ -41,12 +41,7 @@
           </p>
           <div class="hero-actions button-row">
             <a class="button primary" href="../demo/">MVP 확인</a>
-            <a
-              class="button"
-              href="https://github.com/zkproofport/circuits/tree/main/giwa-attestation"
-              target="_blank"
-              rel="noreferrer"
-            >회로 소스</a>
+            <a class="button" href="../contracts/">구현 자료</a>
           </div>
         </div>
       </section>
@@ -55,7 +50,7 @@
         <div class="content-grid wrap">
           <p class="section-no">01 / PROBLEM</p>
           <div class="content-body">
-            <h2>신뢰를 확인하는 과정에서<br />새로운 개인정보 위험이 생깁니다.</h2>
+            <h2>Dojang 자격을 직접 조회할 때 생기는 노출</h2>
             <p>
               Dojang은 신뢰할 수 있는 오프체인 정보를 온체인 자격으로 연결합니다.
               하지만 dApp이 자격이 발급된 지갑을 직접 확인하면 해당 지갑의 이용
@@ -74,7 +69,7 @@
         <div class="content-grid wrap">
           <p class="section-no">02 / ARCHITECTURE</p>
           <div class="content-body">
-            <h2>발급, 증명, 검증의 역할을 나눕니다.</h2>
+            <h2>Dojang → ZKProofport → GIWA verifier</h2>
             <div class="tech-flow" aria-label="제품 아키텍처">
               <article>
                 <small>TRUST SOURCE</small>
@@ -110,7 +105,7 @@
         <div class="content-grid wrap">
           <p class="section-no">03 / PRIVACY</p>
           <div class="content-body">
-            <h2>서비스가 보는 정보와<br />보지 않는 정보를 분리합니다.</h2>
+            <h2>원본 데이터를 보지 않는 검증 경계</h2>
             <div class="privacy-table">
               <article>
                 <h3>dApp이 확인하는 것</h3>
@@ -139,7 +134,7 @@
         <div class="content-grid wrap">
           <p class="section-no">04 / CIRCUIT</p>
           <div class="content-body">
-            <h2>회로가 확인하는 내용</h2>
+            <h2>GIWA attestation 검증 회로</h2>
             <ul class="plain-list">
               <li><b>01</b><span>사용자의 public key에서 주소를 유도하고 지갑 서명을 검증합니다.</span></li>
               <li><b>02</b><span>attestation transaction을 파싱하고 허용된 발급자의 서명을 확인합니다.</span></li>
@@ -154,20 +149,14 @@
         <div class="content-grid wrap">
           <p class="section-no">05 / IMPLEMENTATION</p>
           <div class="content-body">
-            <h2>현재 구현된 구성요소</h2>
+            <h2>구현 스택</h2>
             <div class="metric-row">
               <article><strong>Noir circuit</strong><span>GIWA attestation 검증과 nullifier 생성</span></article>
               <article><strong>Mobile prover</strong><span>React Native · mopro · on-device proving</span></article>
               <article><strong>GIWA verifier</strong><span>GIWA Sepolia에 배포한 Solidity verifier</span></article>
             </div>
             <div class="button-row">
-              <a class="button primary" href="../contracts/">컨트랙트 주소 확인</a>
-              <a
-                class="button"
-                href="https://github.com/zkproofport/proofport-app"
-                target="_blank"
-                rel="noreferrer"
-              >모바일 앱 저장소</a>
+              <a class="button primary" href="../contracts/">구현 자료 한눈에 보기</a>
             </div>
             <div class="sdk-foundation">
               <strong>dApp 연동 기반</strong>
@@ -176,12 +165,7 @@
                 구현되어 있습니다. GIWA 회로 타입과 배포 설정은 공식 Dojang 연동 단계에서
                 추가합니다.
               </span>
-              <a
-                class="button"
-                href="https://github.com/zkproofport/proofport-app-sdk"
-                target="_blank"
-                rel="noreferrer"
-              >SDK 저장소</a>
+              <a class="button" href="../contracts/">구현 자료</a>
             </div>
           </div>
         </div>
@@ -191,14 +175,13 @@
         <div class="content-grid wrap">
           <p class="section-no">06 / BOUNDARY</p>
           <div class="content-body">
-            <h2>현재 MVP와 공식 Dojang 연동의 경계</h2>
+            <h2>공식 Dojang 연동 지점</h2>
             <div class="notice">
-              <strong>현재 MVP는 기술 흐름을 검증한 GIWA Sepolia PoC입니다.</strong>
-              공식 Dojang의 Verified Address는 사용자가 KYC를 완료한 뒤 업비트의
-              발급 절차를 거쳐야 하므로 팀이 임의로 테스트 데이터를 만들 수 없습니다.
-              이에 따라 현재 데모는 GIWA Sepolia에 배포한 테스트 attester를 사용합니다.
-              회로, 모바일 증명, verifier 흐름은 구현되어 있으며, 공식 발급 데이터 접근이
-              확보되면 실제 Dojang schema와 발급자 정책에 맞춰 최종 연동할 계획입니다.
+              <strong>현재 PoC는 Dojang 발급 이후의 ZK 증명 파이프라인을 검증합니다.</strong>
+              공식 Dojang의 Verified Address는 사용자가 KYC를 완료한 뒤 업비트가 발급하는
+              운영 데이터입니다. PoC에서는 발급 단계에 테스트 attester를 사용하고,
+              회로·모바일 증명·verifier 흐름을 구현했습니다. Production 단계에서 발급자
+              주소, schema와 정책을 공식 Dojang 데이터에 맞춰 연결합니다.
             </div>
           </div>
         </div>
@@ -208,7 +191,7 @@
         <div class="content-grid wrap">
           <p class="section-no">07 / ROADMAP</p>
           <div class="content-body">
-            <h2>PoC에서 시작해<br />GIWA Wallet의 네이티브 기능으로</h2>
+            <h2>GIWA Wallet 네이티브 통합 로드맵</h2>
             <p>
               초기에는 독립 앱과 SDK로 빠르게 dApp 연동을 시작합니다. 공식 Dojang
               데이터를 연결한 뒤에는 증명 요청·동의·생성을 GIWA Wallet 안에 통합합니다.
