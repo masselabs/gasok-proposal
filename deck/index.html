@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pitch Deck — ZKProofport for GIWA</title>
+    <meta
+      name="description"
+      content="Dojang의 신뢰를 원본 지갑 노출 없이 활용하는 ZKProofport의 GASOK 피치덱"
+    />
+    <meta property="og:image" content="../assets/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../assets/zkproofport-logo.png" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="deck-page">
+    <main class="pitch-deck" aria-label="ZKProofport for GIWA 피치덱">
+      <aside class="deck-rail">
+        <a class="brand" href="../" aria-label="제출 허브로 돌아가기">
+          <img src="../assets/zkproofport-logo.png" alt="" />
+          <span><strong>ZKProofport</strong><small>Pitch deck</small></span>
+        </a>
+        <nav class="deck-nav" id="deckNav" aria-label="슬라이드 목록"></nav>
+        <div class="deck-rail-footer">
+          <a href="../">← 제출 허브</a>
+          <span class="slide-number">GASOK 2026</span>
+        </div>
+      </aside>
+
+      <div class="deck-stage">
+        <section class="pitch-slide active" data-title="제안" aria-hidden="false">
+          <div class="slide-cover">
+            <div>
+              <p class="kicker">GASOK · GIWA-NATIVE IDEAS</p>
+              <h1>ZKProofport<br />for GIWA</h1>
+              <p class="lede">
+                Dojang의 신뢰를 원본 지갑과 민감정보 노출 없이 사용하는
+                프라이버시 인프라
+              </p>
+              <ul class="proof-tags">
+                <li>GIWA Sepolia MVP</li>
+                <li>On-device proving</li>
+                <li>Onchain verification</li>
+              </ul>
+            </div>
+            <div class="pass-card">
+              <div class="pass-top"><span>PRIVATE PROOF</span><span>GIWA</span></div>
+              <div class="pass-mark"><span>VERIFIED</span><strong>TRUE</strong></div>
+              <div class="pass-result"><span>Wallet</span><b>HIDDEN</b></div>
+              <div class="pass-result"><span>Personal data</span><b>NOT COLLECTED</b></div>
+              <div class="pass-bottom">proof, not exposure</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="pitch-slide" data-title="문제" aria-hidden="true">
+          <div class="slide-header">
+            <p class="eyebrow">01 / PROBLEM</p>
+            <h2>개인정보는 잘 보관하는 것보다<br />받지 않는 편이 안전합니다.</h2>
+          </div>
+          <div class="slide-grid-2">
+            <article class="slide-card dark">
+              <span>DIRECT CHECK</span>
+              <h3>서비스가 직접 확인하면</h3>
+              <p>
+                인증 지갑, 자격 상태, 앱 사용 기록이 하나의 공개된 지갑 그래프에
+                연결됩니다. 서비스가 관리해야 할 민감정보도 늘어납니다.
+              </p>
+            </article>
+            <article class="slide-card green">
+              <span>PRIVATE PROOF</span>
+              <h3>증명만 확인하면</h3>
+              <p>
+                서비스는 조건이 참인지 확인하되 원본 지갑과 인증 데이터를 받지
+                않습니다. 사용자는 필요한 사실만 선택해 증명합니다.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="pitch-slide" data-title="GIWA 적합성" aria-hidden="true">
+          <div class="slide-header">
+            <p class="eyebrow">02 / GIWA FIT</p>
+            <h2>Dojang이 신뢰를 만들고,<br />ZKProofport가 안전하게 전달합니다.</h2>
+          </div>
+          <div class="slide-flow">
+            <article>
+              <span>TRUST SOURCE</span>
+              <strong>Dojang</strong>
+            </article>
+            <i>→</i>
+            <article class="active">
+              <span>PRIVACY LAYER</span>
+              <strong>ZKProofport</strong>
+            </article>
+            <i>→</i>
+            <article>
+              <span>VERIFICATION</span>
+              <strong>GIWA Chain</strong>
+            </article>
+            <i>→</i>
+            <article>
+              <span>APPLICATION</span>
+              <strong>GIWA dApp</strong>
+            </article>
+          </div>
+          <div class="slide-grid-3">
+            <article class="slide-card">
+              <span>DOJANG</span>
+              <h3>자격 발급</h3>
+              <p>신뢰할 수 있는 발급자가 Verified Address 등의 자격을 온체인에 발급</p>
+            </article>
+            <article class="slide-card green">
+              <span>ZKPROOFPORT</span>
+              <h3>선택적 증명</h3>
+              <p>사용자 기기에서 필요한 조건만 proof로 변환</p>
+            </article>
+            <article class="slide-card">
+              <span>dAPP</span>
+              <h3>정책 적용</h3>
+              <p>원본 데이터를 받지 않고 proof의 유효성만 확인</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="pitch-slide" data-title="MVP" aria-hidden="true">
+          <div class="slide-header">
+            <p class="eyebrow">03 / MVP</p>
+            <h2>GIWA 테스트넷에서<br />증명 생성과 검증이 작동합니다.</h2>
+          </div>
+          <div class="slide-grid-3">
+            <article class="slide-card">
+              <span>01 / ATTESTATION</span>
+              <h3>GIWA test attester</h3>
+              <p>GIWA Sepolia에서 테스트용 attestation 발급</p>
+            </article>
+            <article class="slide-card green">
+              <span>02 / PROVING</span>
+              <h3>Mobile · mopro</h3>
+              <p>private input을 외부로 보내지 않고 기기 안에서 proof 생성</p>
+            </article>
+            <article class="slide-card">
+              <span>03 / VERIFY</span>
+              <h3>HonkVerifier</h3>
+              <p>GIWA Sepolia의 Solidity verifier에서 온체인 검증</p>
+            </article>
+          </div>
+          <div class="notice" style="margin-top: 18px">
+            현재 데모는 팀이 배포한 테스트 attester를 사용합니다. 공식 Dojang
+            Verified Address는 사용자 KYC와 업비트의 발급 절차가 필요해, GASOK을
+            통해 실제 발급 데이터와의 최종 연동을 진행하고자 합니다.
+          </div>
+        </section>
+
+        <section class="pitch-slide" data-title="프라이버시" aria-hidden="true">
+          <div class="slide-header">
+            <p class="eyebrow">04 / PRIVACY</p>
+            <h2>dApp은 결과를 확인하고,<br />민감정보는 사용자에게 남습니다.</h2>
+          </div>
+          <div class="slide-grid-2">
+            <article class="slide-card">
+              <span>dAPP LEARNS</span>
+              <h3>서비스가 확인하는 것</h3>
+              <p>조건 충족 여부 · scope · nullifier · proof validity</p>
+            </article>
+            <article class="slide-card green">
+              <span>USER KEEPS</span>
+              <h3>사용자에게 남는 것</h3>
+              <p>원본 지갑 · raw attestation · 지갑 서명 · 개인 신원 · 정확한 잔고</p>
+            </article>
+          </div>
+          <div class="slide-grid-3">
+            <article class="slide-card">
+              <span>LESS DATA</span>
+              <h3>수집 최소화</h3>
+              <p>서비스가 보관해야 할 인증 데이터의 범위를 줄입니다.</p>
+            </article>
+            <article class="slide-card">
+              <span>LESS RISK</span>
+              <h3>유출 범위 축소</h3>
+              <p>보유하지 않은 원본 정보는 침해 사고로 유출되지 않습니다.</p>
+            </article>
+            <article class="slide-card">
+              <span>MORE CONTROL</span>
+              <h3>사용자 통제</h3>
+              <p>사용자가 매 요청마다 필요한 사실만 직접 증명합니다.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="pitch-slide" data-title="구현 증거" aria-hidden="true">
+          <div class="slide-header">
+            <p class="eyebrow">05 / EVIDENCE</p>
+            <h2>회로, 모바일 prover, verifier를<br />직접 구현하고 배포했습니다.</h2>
+          </div>
+          <div class="slide-proof">
+            <div class="contract-stack">
+              <article class="contract-card">
+                <span class="contract-type">TEST ATTESTER</span>
+                <h3>0x6646…b414</h3>
+                <code>GIWA Sepolia · MockGiwaAttester</code>
+                <a
+                  class="button"
+                  href="https://sepolia-explorer.giwa.io/address/0x6646d970499bbed728636823a5a7e551e811b414"
+                  target="_blank"
+                  rel="noreferrer"
+                >Explorer →</a>
+              </article>
+              <article class="contract-card">
+                <span class="contract-type">ULTRAHONK VERIFIER</span>
+                <h3>0xeb9e…1492</h3>
+                <code>GIWA Sepolia · HonkVerifier</code>
+                <a
+                  class="button primary"
+                  href="https://sepolia-explorer.giwa.io/address/0xeb9eb5452790cfe549ff83ceb3dbe1c432231492"
+                  target="_blank"
+                  rel="noreferrer"
+                >Explorer →</a>
+              </article>
+            </div>
+            <div class="button-row">
+              <a class="button" href="../demo/">실제 구동 영상 보기</a>
+              <a
+                class="button"
+                href="https://github.com/zkproofport/circuits/tree/main/giwa-attestation"
+                target="_blank"
+                rel="noreferrer"
+              >회로 소스 보기</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="pitch-slide" data-title="확장성" aria-hidden="true">
+          <div class="slide-header">
+            <p class="eyebrow">06 / PLATFORM</p>
+            <h2>Dojang에서 시작해<br />조립 가능한 프라이버시 인프라로 확장합니다.</h2>
+          </div>
+          <div class="slide-grid-3">
+            <article class="slide-card green">
+              <span>MOBILE</span>
+              <h3>사람을 위한 증명</h3>
+              <p>모바일 앱과 웹에서 사용자가 직접 증명을 생성</p>
+            </article>
+            <article class="slide-card">
+              <span>CIRCUITS</span>
+              <h3>계속 추가되는 자격</h3>
+              <p>Verified Address, Balance, Code와 새로운 GIWA 자격을 같은 방식으로 제공</p>
+            </article>
+            <article class="slide-card dark">
+              <span>AI AGENT</span>
+              <h3>에이전트를 위한 증명</h3>
+              <p>TEE 기반 Prover Agent가 같은 verifier 체계를 사용</p>
+            </article>
+          </div>
+          <div class="notice" style="margin-top: 18px">
+            dApp은 한 번 연동하고, 새로운 회로가 추가될 때마다 같은 요청·검증 방식으로
+            더 많은 자격을 사용할 수 있습니다.
+          </div>
+        </section>
+
+        <section class="pitch-slide" data-title="팀과 성과" aria-hidden="true">
+          <div class="slide-header">
+            <p class="eyebrow">07 / TEAM</p>
+            <h2>같은 문제를 이미 풀어본<br />2인 기술 창업팀입니다.</h2>
+          </div>
+          <div class="slide-team">
+            <article class="slide-person">
+              <img src="../assets/team-hyunsu.png" alt="현수영" />
+              <div>
+                <h3>현수영</h3>
+                <p>Remix IDE 코어 컨트리뷰터 · Aztec Genesis Sequencer · 전 DSRV 리드 엔지니어</p>
+              </div>
+            </article>
+            <article class="slide-person">
+              <img src="../assets/team-jehyuk.png" alt="현제혁" />
+              <div>
+                <h3>현제혁</h3>
+                <p>NHN Cloud 팀 리드 · KAIST · 전 TmaxSoft 엔지니어</p>
+              </div>
+            </article>
+          </div>
+          <div class="slide-grid-3">
+            <article class="slide-card">
+              <span>BASE BATCHES 002</span>
+              <h3>Builder Track Top 50</h3>
+              <p>Coinbase EAS KYC 증명으로 동일한 문제를 해결</p>
+            </article>
+            <article class="slide-card green">
+              <span>AZTEC / NOIR</span>
+              <h3>Circuit Grant</h3>
+              <p>Noir 회로 구현 역량을 인정받아 그랜트 수령</p>
+            </article>
+            <article class="slide-card">
+              <span>END-TO-END</span>
+              <h3>Full-stack execution</h3>
+              <p>회로부터 모바일, SDK, verifier와 AI agent까지 직접 구현</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="pitch-slide" data-title="GASOK" aria-hidden="true">
+          <div class="slide-header">
+            <p class="eyebrow">08 / WHY GASOK</p>
+            <h2>기술 흐름은 만들었습니다.<br />이제 공식 제품으로 연결할 차례입니다.</h2>
+          </div>
+          <div class="slide-grid-3">
+            <article class="slide-card green">
+              <span>DOJANG</span>
+              <h3>공식 자격 연동</h3>
+              <p>실제 Verified Address와 Balance 발급 데이터로 회로와 제품을 검증</p>
+            </article>
+            <article class="slide-card">
+              <span>GIWA WALLET</span>
+              <h3>지갑 네이티브 UX</h3>
+              <p>증명 요청과 승인을 GIWA Wallet 안에서 자연스럽게 연결</p>
+            </article>
+            <article class="slide-card dark">
+              <span>COMPLIANCE</span>
+              <h3>안전한 제품화</h3>
+              <p>개인정보 최소 수집 구조에 대한 법률·컴플라이언스 및 보안 자문</p>
+            </article>
+          </div>
+          <div class="closing-cta" style="margin-top: 18px; padding: 32px">
+            <h3 style="margin: 0; font-size: clamp(1.7rem, 3vw, 3rem); letter-spacing: -0.05em">
+              신뢰는 확인하고, 개인정보는 남기지 않는 GIWA.
+            </h3>
+          </div>
+        </section>
+      </div>
+
+      <div class="deck-controls">
+        <button id="deckPrev" type="button" aria-label="이전 슬라이드">←</button>
+        <span id="deckCounter">01 / 09</span>
+        <button id="deckNext" type="button" aria-label="다음 슬라이드">→</button>
+      </div>
+    </main>
+    <script src="../script.js"></script>
+  </body>
+</html>

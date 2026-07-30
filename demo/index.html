@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MVP Demo — ZKProofport for GIWA</title>
+    <meta
+      name="description"
+      content="GIWA Sepolia에서 작동하는 ZKProofport 모바일 증명 생성 및 온체인 검증 데모"
+    />
+    <meta property="og:image" content="../assets/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../assets/zkproofport-logo.png" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../" aria-label="ZKProofport for GIWA 홈">
+        <img src="../assets/zkproofport-logo.png" alt="" />
+        <span><strong>ZKProofport</strong><small>for GIWA</small></span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="siteNav">메뉴</button>
+      <nav class="site-nav" id="siteNav" aria-label="주요 메뉴">
+        <a class="active" href="./">MVP</a>
+        <a href="../one-pager/">기술 문서</a>
+        <a href="../contracts/">컨트랙트</a>
+        <a href="../team/">팀</a>
+        <a href="../deck/">피치덱</a>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero wrap">
+        <p class="section-no">MVP / DEMO</p>
+        <div>
+          <h1>모바일에서 만든 증명을<br />GIWA에서 검증합니다.</h1>
+          <p class="lede">
+            테스트 attestation 발급부터 모바일 기기 내 증명 생성, GIWA Sepolia의
+            Solidity verifier 검증까지 하나의 흐름으로 구현했습니다.
+          </p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="content-grid wrap">
+          <p class="section-no">01 / VIDEO</p>
+          <div class="content-body">
+            <h2>실제 구동 영상</h2>
+            <div class="video-frame">
+              <video controls playsinline preload="metadata" poster="../assets/zkproofport-logo.png">
+                <source src="../assets/dojang.mp4" type="video/mp4" />
+                브라우저에서 영상을 재생할 수 없습니다.
+              </video>
+            </div>
+            <div class="metric-row">
+              <article>
+                <strong>GIWA Sepolia</strong>
+                <span>attestation과 verifier가 배포된 네트워크</span>
+              </article>
+              <article>
+                <strong>On-device</strong>
+                <span>민감한 입력을 외부 서버로 보내지 않고 증명 생성</span>
+              </article>
+              <article>
+                <strong>UltraHonk</strong>
+                <span>Noir 회로와 Solidity verifier가 사용하는 증명 방식</span>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="content-grid wrap">
+          <p class="section-no">02 / FLOW</p>
+          <div class="content-body">
+            <h2>현재 동작하는 흐름</h2>
+            <ol class="status-list">
+              <li>
+                <b>01</b>
+                <span>GIWA Sepolia의 테스트 attester가 검증 대상 지갑에 attestation을 발급합니다.</span>
+              </li>
+              <li>
+                <b>02</b>
+                <span>ZKProofport 모바일 앱이 attestation transaction과 지갑 소유권을 확인합니다.</span>
+              </li>
+              <li>
+                <b>03</b>
+                <span>mopro와 Noir 회로가 사용자 기기 안에서 영지식 증명을 생성합니다.</span>
+              </li>
+              <li>
+                <b>04</b>
+                <span>GIWA Sepolia에 배포한 HonkVerifier가 proof와 public inputs를 검증합니다.</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="content-grid wrap">
+          <p class="section-no">03 / SCOPE</p>
+          <div class="content-body">
+            <h2>데모의 범위</h2>
+            <div class="notice">
+              <strong>공식 Dojang KYC attestation을 사용한 데모는 아직 진행하지 못했습니다.</strong>
+              Dojang 컨트랙트는 GIWA 테스트넷에 배포되어 있지만, 실제 Verified Address를
+              발급받으려면 사용자가 KYC를 마친 뒤 업비트의 발급 절차를 거쳐야 합니다.
+              현재 MVP는 GIWA Sepolia에 직접 배포한 테스트 attester로 동일한 증명 구조와
+              온체인 검증 흐름을 확인합니다. GASOK을 통해 공식 발급 데이터와의 최종 연동을
+              진행하고자 합니다.
+            </div>
+            <ul class="plain-list" style="margin-top: 28px">
+              <li>
+                <b>DONE</b>
+                <span>GIWA용 Noir 회로, 모바일 증명 생성, verifier 배포, 온체인 검증</span>
+              </li>
+              <li>
+                <b>NEXT</b>
+                <span>공식 Dojang 발급 데이터 연동, GIWA Wallet 증명 요청 UX, showcase dApp</span>
+              </li>
+            </ul>
+            <div class="button-row">
+              <a class="button primary" href="../contracts/">배포 컨트랙트 확인</a>
+              <a
+                class="button"
+                href="https://github.com/zkproofport/circuits/tree/main/giwa-attestation"
+                target="_blank"
+                rel="noreferrer"
+              >회로 소스 보기</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div><strong>ZKProofport</strong><p>Privacy-first trust infrastructure.</p></div>
+        <div class="footer-links">
+          <a href="../">제출 허브</a>
+          <a href="../deck/">피치덱</a>
+          <a href="../one-pager/">기술 문서</a>
+        </div>
+        <p class="footer-meta">GASOK 2026 · GIWA Sepolia MVP</p>
+      </div>
+    </footer>
+    <script src="../script.js"></script>
+  </body>
+</html>

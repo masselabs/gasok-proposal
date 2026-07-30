@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Verified Contracts — ZKProofport for GIWA</title>
+    <meta
+      name="description"
+      content="ZKProofport GIWA Sepolia MVP의 배포 및 검증 완료 스마트 컨트랙트"
+    />
+    <meta property="og:image" content="../assets/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../assets/zkproofport-logo.png" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../" aria-label="ZKProofport for GIWA 홈">
+        <img src="../assets/zkproofport-logo.png" alt="" />
+        <span><strong>ZKProofport</strong><small>for GIWA</small></span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="siteNav">메뉴</button>
+      <nav class="site-nav" id="siteNav" aria-label="주요 메뉴">
+        <a href="../demo/">MVP</a>
+        <a href="../one-pager/">기술 문서</a>
+        <a class="active" href="./">컨트랙트</a>
+        <a href="../team/">팀</a>
+        <a href="../deck/">피치덱</a>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero wrap">
+        <p class="section-no">CONTRACTS</p>
+        <div>
+          <h1>GIWA Sepolia에 배포하고<br />소스 코드를 검증했습니다.</h1>
+          <p class="lede">
+            MVP에서 사용하는 테스트 attester와 UltraHonk verifier를 GIWA 블록
+            익스플로러에서 직접 확인할 수 있습니다.
+          </p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="content-grid wrap">
+          <p class="section-no">01 / DEPLOYED</p>
+          <div class="content-body">
+            <h2>배포 컨트랙트</h2>
+            <div class="contract-stack">
+              <article class="contract-card">
+                <span class="contract-type">TEST ATTESTER</span>
+                <div>
+                  <h3>MockGiwaAttester</h3>
+                  <code>0x6646d970499bbed728636823a5a7e551e811b414</code>
+                </div>
+                <a
+                  class="button"
+                  href="https://sepolia-explorer.giwa.io/address/0x6646d970499bbed728636823a5a7e551e811b414"
+                  target="_blank"
+                  rel="noreferrer"
+                >Explorer →</a>
+              </article>
+              <article class="contract-card">
+                <span class="contract-type">ZK VERIFIER</span>
+                <div>
+                  <h3>GiwaAttestation HonkVerifier</h3>
+                  <code>0xeb9eb5452790cfe549ff83ceb3dbe1c432231492</code>
+                </div>
+                <a
+                  class="button primary"
+                  href="https://sepolia-explorer.giwa.io/address/0xeb9eb5452790cfe549ff83ceb3dbe1c432231492"
+                  target="_blank"
+                  rel="noreferrer"
+                >Explorer →</a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="content-grid wrap">
+          <p class="section-no">02 / ROLE</p>
+          <div class="content-body">
+            <h2>각 컨트랙트의 역할</h2>
+            <div class="privacy-table">
+              <article>
+                <h3>Test Attester</h3>
+                <p>
+                  공식 Dojang 발급 데이터에 접근할 수 없는 상태에서 회로 입력과 전체
+                  검증 흐름을 시험하기 위한 컨트랙트입니다. GIWA의 EAS predeploy를
+                  사용해 테스트 attestation을 발급합니다.
+                </p>
+              </article>
+              <article class="private">
+                <h3>HonkVerifier</h3>
+                <p>
+                  모바일 앱에서 생성한 UltraHonk proof와 public inputs를 검증합니다.
+                  사용자 주소와 attestation 원문은 verifier에 전달되지 않습니다.
+                </p>
+              </article>
+            </div>
+            <div class="button-row">
+              <a
+                class="button"
+                href="https://github.com/zkproofport/circuits"
+                target="_blank"
+                rel="noreferrer"
+              >컨트랙트 및 회로 저장소</a>
+              <a class="button" href="../one-pager/">기술 구조 보기</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div><strong>ZKProofport</strong><p>Verified on GIWA Sepolia.</p></div>
+        <div class="footer-links">
+          <a href="../">제출 허브</a><a href="../demo/">MVP</a><a href="../one-pager/">기술 문서</a>
+        </div>
+        <p class="footer-meta">Chain ID 91342 · GIWA Sepolia</p>
+      </div>
+    </footer>
+    <script src="../script.js"></script>
+  </body>
+</html>
