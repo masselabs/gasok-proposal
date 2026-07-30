@@ -46,6 +46,31 @@
           <p class="section-no">01 / VIDEO</p>
           <div class="content-body">
             <h2>실제 구동 영상</h2>
+            <div class="video-guide">
+              <p>영상에서 확인할 순서</p>
+              <div class="video-steps">
+                <article>
+                  <span>01</span>
+                  <strong>테스트 자격 발급</strong>
+                  <p>GIWA Sepolia의 테스트 attester가 대상 지갑에 attestation을 발급합니다.</p>
+                </article>
+                <article>
+                  <span>02</span>
+                  <strong>발급 내역 확인</strong>
+                  <p>모바일 앱이 attestation transaction과 지갑 소유권을 확인합니다.</p>
+                </article>
+                <article>
+                  <span>03</span>
+                  <strong>기기 안에서 증명</strong>
+                  <p>mopro와 Noir 회로가 원본 데이터를 외부로 보내지 않고 proof를 만듭니다.</p>
+                </article>
+                <article>
+                  <span>04</span>
+                  <strong>GIWA 온체인 검증</strong>
+                  <p>배포된 HonkVerifier가 proof와 public inputs의 유효성을 확인합니다.</p>
+                </article>
+              </div>
+            </div>
             <div class="video-frame">
               <video controls playsinline preload="metadata" poster="../assets/zkproofport-logo.png">
                 <source src="../assets/dojang.mp4" type="video/mp4" />
@@ -72,27 +97,41 @@
 
       <section class="content-section">
         <div class="content-grid wrap">
-          <p class="section-no">02 / FLOW</p>
+          <p class="section-no">02 / ROADMAP</p>
           <div class="content-body">
-            <h2>현재 동작하는 흐름</h2>
-            <ol class="status-list">
-              <li>
-                <b>01</b>
-                <span>GIWA Sepolia의 테스트 attester가 검증 대상 지갑에 attestation을 발급합니다.</span>
-              </li>
-              <li>
-                <b>02</b>
-                <span>ZKProofport 모바일 앱이 attestation transaction과 지갑 소유권을 확인합니다.</span>
-              </li>
-              <li>
-                <b>03</b>
-                <span>mopro와 Noir 회로가 사용자 기기 안에서 영지식 증명을 생성합니다.</span>
-              </li>
-              <li>
-                <b>04</b>
-                <span>GIWA Sepolia에 배포한 HonkVerifier가 proof와 public inputs를 검증합니다.</span>
-              </li>
-            </ol>
+            <h2>PoC에서 시작해<br />지갑의 기본 기능으로 확장합니다.</h2>
+            <div class="roadmap">
+              <article class="current">
+                <span>PHASE 1 · NOW</span>
+                <strong>GIWA Sepolia PoC</strong>
+                <p>테스트 attester, 모바일 증명 생성, GIWA verifier를 연결해 기술 흐름을 검증했습니다.</p>
+                <em>IMPLEMENTED</em>
+              </article>
+              <div class="roadmap-arrow" aria-hidden="true">→</div>
+              <article>
+                <span>PHASE 2 · DOJANG</span>
+                <strong>공식 발급 데이터 연동</strong>
+                <p>Verified Address와 Balance를 실제 schema·발급자 정책에 맞춰 연결하고 dApp SDK로 제공합니다.</p>
+                <em>GASOK PRODUCTION</em>
+              </article>
+              <div class="roadmap-arrow" aria-hidden="true">→</div>
+              <article class="final">
+                <span>PHASE 3 · NATIVE</span>
+                <strong>GIWA Wallet 네이티브 통합</strong>
+                <p>증명 요청 확인, 사용자 동의, 기기 내 proof 생성을 지갑 안의 한 흐름으로 완성합니다.</p>
+                <em>FINAL PRODUCT</em>
+              </article>
+            </div>
+            <div class="native-case">
+              <h3>왜 지갑 안에 들어가야 하나</h3>
+              <p>
+                독립 앱과 SDK는 빠른 도입에 적합하지만, 사용자는 QR이나 딥링크를 거치며
+                화면을 전환해야 합니다. GIWA Wallet에 네이티브하게 통합하면 사용자가
+                익숙한 승인 화면에서 dApp의 요청 범위를 확인하고 곧바로 증명할 수 있습니다.
+                민감한 자격 데이터는 지갑 밖으로 내보내지 않으면서도 피싱성 요청과
+                불필요한 이탈을 줄이는 가장 자연스러운 사용자 경험입니다.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -110,16 +149,6 @@
               온체인 검증 흐름을 확인합니다. GASOK을 통해 공식 발급 데이터와의 최종 연동을
               진행하고자 합니다.
             </div>
-            <ul class="plain-list" style="margin-top: 28px">
-              <li>
-                <b>DONE</b>
-                <span>GIWA용 Noir 회로, 모바일 증명 생성, verifier 배포, 온체인 검증</span>
-              </li>
-              <li>
-                <b>NEXT</b>
-                <span>공식 Dojang 발급 데이터 연동, GIWA Wallet 증명 요청 UX, showcase dApp</span>
-              </li>
-            </ul>
             <div class="button-row">
               <a class="button primary" href="../contracts/">배포 컨트랙트 확인</a>
               <a

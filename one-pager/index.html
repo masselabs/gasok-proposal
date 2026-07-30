@@ -169,6 +169,20 @@
                 rel="noreferrer"
               >모바일 앱 저장소</a>
             </div>
+            <div class="sdk-foundation">
+              <strong>dApp 연동 기반</strong>
+              <span>
+                공개 SDK에는 proof request, QR·딥링크, proof 전달, 온체인 검증 흐름이
+                구현되어 있습니다. GIWA 회로 타입과 배포 설정은 공식 Dojang 연동 단계에서
+                추가합니다.
+              </span>
+              <a
+                class="button"
+                href="https://github.com/zkproofport/proofport-app-sdk"
+                target="_blank"
+                rel="noreferrer"
+              >SDK 저장소</a>
+            </div>
           </div>
         </div>
       </section>
@@ -192,18 +206,19 @@
 
       <section class="content-section">
         <div class="content-grid wrap">
-          <p class="section-no">07 / EXPANSION</p>
+          <p class="section-no">07 / ROADMAP</p>
           <div class="content-body">
-            <h2>하나의 Dojang 회로에서<br />조립 가능한 프라이버시 인프라로</h2>
+            <h2>PoC에서 시작해<br />GIWA Wallet의 네이티브 기능으로</h2>
             <p>
-              ZKProofport는 자격 유형별 회로를 추가하고, dApp은 같은 요청·검증 방식으로
-              새로운 증명을 사용할 수 있도록 설계했습니다. 사람은 모바일 또는 웹에서,
-              AI 에이전트는 TEE 기반 Prover Agent에서 같은 검증 체계를 사용할 수 있습니다.
+              초기에는 독립 앱과 SDK로 빠르게 dApp 연동을 시작합니다. 공식 Dojang
+              데이터를 연결한 뒤에는 증명 요청·동의·생성을 GIWA Wallet 안에 통합합니다.
+              dApp은 같은 요청 규격을 유지하면서 Verified Address, Balance, Code 등
+              새로운 자격 회로를 계속 추가할 수 있습니다.
             </p>
             <ul class="plain-list">
-              <li><b>NOW</b><span>Verified Address형 KYC 증명</span></li>
-              <li><b>NEXT</b><span>정확한 잔고를 숨기는 Verified Balance 조건 증명</span></li>
-              <li><b>LATER</b><span>Verified Code와 GIWA 생태계에 필요한 추가 자격 증명</span></li>
+              <li><b>01</b><span>테스트 attester를 사용한 GIWA Sepolia PoC — 구현 완료</span></li>
+              <li><b>02</b><span>공식 Dojang Verified Address·Balance와 dApp SDK 연동</span></li>
+              <li><b>03</b><span>GIWA Wallet 네이티브 proof request·동의·기기 내 증명 생성</span></li>
             </ul>
           </div>
         </div>
