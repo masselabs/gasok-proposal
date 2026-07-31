@@ -42,9 +42,10 @@
         <div>
           <h1>Dojang 데이터에서<br />GIWA 검증까지</h1>
           <p class="lede">
-            Dojang attestation을 입력으로 받아 사용자 기기에서 ZK proof를 만들고,
-            GIWA verifier가 검증하는 전체 흐름을 구현했습니다. PoC에서는 GIWA Sepolia에
-            mock EAS 데이터를 미리 등록해 Dojang 발급 이후의 흐름을 재현합니다.
+            Dojang attestation을 입력받아 사용자 기기에서 ZK proof를 생성하고,
+            GIWA verifier가 이를 검증하는 전체 파이프라인을 구현했습니다. 현재 PoC는
+            GIWA Sepolia에 등록된 mock EAS 데이터를 활용해 Dojang 발급 이후의 ZK 증명
+            흐름을 보여줍니다.
           </p>
         </div>
       </section>
@@ -56,12 +57,12 @@
             <h2>실제 구동 영상</h2>
             <div class="notice">
               <strong>영상은 ZKProofport 앱 화면에서 시작합니다.</strong>
-              PoC를 위해 GIWA Sepolia에 mock EAS 데이터를 미리 등록했으며, EAS 등록 장면은
-              영상에서 생략했습니다. 영상에서는 앱이 이 데이터를 불러와 검증하고 proof를
-              생성하는 과정부터 확인할 수 있습니다.
+              PoC 동작을 위해 GIWA Sepolia에 mock EAS 데이터를 미리 등록했으며, 해당 등록
+              과정은 영상에서 생략했습니다. 영상에서는 앱이 등록된 데이터를 조회·검증하고
+              ZK proof를 생성하는 단계부터 확인할 수 있습니다.
             </div>
             <div class="video-guide">
-              <p>영상에서 확인할 순서</p>
+              <p>시연 순서</p>
               <div class="video-steps">
                 <article>
                   <span>01</span>
@@ -75,8 +76,8 @@
                 </article>
                 <article>
                   <span>03</span>
-                  <strong>기기 안에서 증명</strong>
-                  <p>mopro와 Noir 서킷이 원본 데이터를 외부로 보내지 않고 proof를 만듭니다.</p>
+                  <strong>모바일 기기 내 proof 생성</strong>
+                  <p>mopro와 Noir 서킷을 이용해 원본 데이터 노출 없이 기기 내에서 proof를 생성합니다.</p>
                 </article>
                 <article>
                   <span>04</span>
@@ -98,7 +99,7 @@
               </article>
               <article>
                 <strong>On-device</strong>
-                <span>민감한 입력을 외부 서버로 보내지 않고 증명 생성</span>
+                <span>민감한 private input을 외부 서버로 전송하지 않고 증명 생성</span>
               </article>
               <article>
                 <strong>UltraHonk</strong>
@@ -132,18 +133,18 @@
               <article class="final">
                 <span>PHASE 3 · NATIVE</span>
                 <strong>GIWA Wallet 네이티브 통합</strong>
-                <p>증명 요청 확인, 사용자 동의, 기기 내 proof 생성을 지갑 안의 한 흐름으로 완성합니다.</p>
+                <p>증명 요청 확인, 사용자 동의, 기기 내 proof 생성을 GIWA Wallet 내부에서 하나의 흐름으로 처리합니다.</p>
                 <em>FINAL PRODUCT</em>
               </article>
             </div>
             <div class="native-case">
-              <h3>왜 지갑 안에 들어가야 하나</h3>
+              <h3>GIWA Wallet 네이티브 통합의 필요성</h3>
               <p>
-                ZKProofport 앱과 SDK는 빠른 도입에 적합하지만, 사용자는 QR이나 딥링크를 거치며
-                화면을 전환해야 합니다. GIWA Wallet에 네이티브하게 통합하면 사용자가
-                익숙한 승인 화면에서 dApp의 요청 범위를 확인하고 곧바로 증명할 수 있습니다.
-                원본 Dojang 데이터는 지갑 밖으로 내보내지 않으면서도 피싱성 요청과
-                불필요한 이탈을 줄이는 가장 자연스러운 UX가 됩니다.
+                독립 앱과 SDK 방식은 dApp에 빠르게 도입할 수 있지만, 사용자가 QR 코드나
+                딥링크를 통해 화면을 전환해야 합니다. GIWA Wallet에 네이티브로 통합하면
+                사용자는 익숙한 지갑 승인 화면에서 dApp의 검증 요청 항목을 확인하고 바로
+                증명할 수 있습니다. 원본 Dojang 데이터를 지갑 외부에 노출하지 않으면서
+                피싱 위험과 불필요한 이탈을 줄이는 가장 자연스러운 UX가 됩니다.
               </p>
             </div>
           </div>
@@ -157,11 +158,11 @@
             <h2>Proof of Concept</h2>
             <div class="notice">
               <strong>현재 PoC는 Dojang 발급 이후의 ZK 증명 파이프라인을 검증합니다.</strong>
-              공식 Verified Address는 사용자의 KYC와 업비트의 발급 절차를 거쳐 생성되는
-              운영 데이터입니다. PoC에서는 팀이 배포한 테스트 attester로 mock EAS 데이터를
-              등록하고, attestation 확인부터 기기 내 proof 생성, GIWA verifier 검증까지
-              구현했습니다. GASOK 프로그램 기간 동안 개발할 Production 단계에서는 발급자 주소, schema와 정책을 공식
-              Dojang 데이터에 맞춰 연동합니다.
+              공식 Verified Address는 사용자의 KYC와 업비트 발급 절차를 거치는 운영
+              데이터입니다. 현재 PoC에서는 자체 배포한 테스트 attester로 mock EAS 데이터를
+              등록해, attestation 확인부터 기기 내 proof 생성, GIWA verifier 검증까지의
+              흐름을 구현했습니다. GASOK Production 단계에서는 공식 Dojang 데이터의 발급자
+              주소, schema, 인증 정책을 연동할 예정입니다.
             </div>
             <div class="button-row">
               <a target="_blank" rel="noreferrer" class="button primary" href="../contracts/">구현 자료</a>

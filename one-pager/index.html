@@ -57,16 +57,17 @@
         <div class="content-grid wrap">
           <p class="section-no">01 / PROBLEM</p>
           <div class="content-body">
-            <h2>Dojang 인증을 확인하는 과정에서<br />지갑 프라이버시 노출 가능</h2>
+            <h2>Dojang 인증 조회 과정의<br />지갑 프라이버시 문제</h2>
             <p>
-              Dojang은 신뢰할 수 있는 오프체인 정보를 온체인 인증 데이터로 연결합니다.
-              하지만 dApp이 인증 데이터가 발급된 지갑을 직접 확인하면 해당 지갑의 이용
-              기록과 인증 상태가 연결될 수 있습니다. Verified Balance처럼 값이 포함된
-              정보는 서비스가 실제로 필요한 범위보다 많은 내용을 보여줄 수도 있습니다.
+              Dojang은 신뢰할 수 있는 오프체인 데이터를 온체인 인증 데이터로 연결합니다.
+              그러나 dApp이 인증 데이터가 발급된 원본 지갑 주소를 직접 조회하면, 해당
+              지갑의 온체인 활동 기록과 신원 인증 상태가 결합될 수 있습니다. Verified
+              Balance처럼 수치가 포함된 데이터는 서비스에 필요 이상의 민감 정보를
+              노출할 수 있습니다.
             </p>
             <p>
-              ZKProofport는 Dojang에서 발급된 신뢰를 그대로 활용하면서, dApp에는 정책 판단에
-              필요한 결과만 전달합니다.
+              ZKProofport는 Dojang이 제공하는 신뢰를 그대로 활용하면서, dApp에는 조건을
+              판단하는 데 필요한 최소한의 증명 결과만 전달합니다.
             </p>
           </div>
         </div>
@@ -102,7 +103,7 @@
               <li><b>01</b><span>dApp이 필요한 검증 항목과 서비스별 scope를 요청합니다.</span></li>
               <li><b>02</b><span>사용자 기기에서 지갑 소유권과 attestation의 유효성을 확인합니다.</span></li>
               <li><b>03</b><span>Noir 서킷이 private inputs를 사용해 UltraHonk proof를 생성합니다.</span></li>
-              <li><b>04</b><span>GIWA의 verifier가 proof와 public inputs만으로 결과를 확인합니다.</span></li>
+              <li><b>04</b><span>GIWA verifier가 proof와 public inputs만으로 유효성을 검증합니다.</span></li>
             </ol>
           </div>
         </div>
@@ -112,10 +113,10 @@
         <div class="content-grid wrap">
           <p class="section-no">03 / PRIVACY</p>
           <div class="content-body">
-            <h2>dApp이 확인하는 결과와<br />사용자 기기에 남는 정보</h2>
+            <h2>dApp이 검증하는 결과와<br />dApp에 공개되지 않는 원본 정보</h2>
             <div class="privacy-table">
               <article>
-                <h3>dApp이 확인하는 것</h3>
+                <h3>dApp에 전달되는 정보</h3>
                 <ul>
                   <li>요청한 조건의 충족 여부</li>
                   <li>서비스별 scope</li>
@@ -124,7 +125,7 @@
                 </ul>
               </article>
               <article class="private">
-                <h3>사용자 기기에 남는 것</h3>
+                <h3>dApp에 전달되지 않는 정보</h3>
                 <ul>
                   <li>Dojang 데이터가 발급된 원본 지갑 주소</li>
                   <li>raw attestation transaction</li>
@@ -146,7 +147,7 @@
               <li><b>01</b><span>사용자의 public key에서 주소를 유도하고 지갑 서명을 검증합니다.</span></li>
               <li><b>02</b><span>attestation transaction을 파싱하고 허용된 발급자의 서명을 확인합니다.</span></li>
               <li><b>03</b><span>transaction의 대상 컨트랙트와 호출 데이터가 증명 대상 지갑과 일치하는지 확인합니다.</span></li>
-              <li><b>04</b><span>사용자와 서비스 scope에 묶인 nullifier를 계산해 서비스 간 추적과 중복 사용을 줄입니다.</span></li>
+              <li><b>04</b><span>사용자와 서비스 scope를 결합한 nullifier를 계산해 서비스 간 추적을 어렵게 하고 중복 사용을 막습니다.</span></li>
             </ul>
           </div>
         </div>
@@ -165,9 +166,9 @@
             <div class="sdk-foundation">
               <strong>dApp 연동 기반</strong>
               <span>
-                공개 SDK에는 proof request, QR·딥링크, proof 전달, 온체인 검증 흐름이
-                구현되어 있습니다. GIWA 서킷 타입과 배포 설정은 공식 Dojang 데이터 연동 단계에서
-                추가합니다.
+                공개 SDK에는 proof request, QR·딥링크 연동, proof 전송, 온체인 검증 모듈이
+                구현되어 있습니다. GIWA 전용 서킷 타입과 배포 설정은 공식 Dojang 데이터
+                연동 단계에서 추가할 예정입니다.
               </span>
               <a target="_blank" rel="noreferrer" class="button" href="../contracts/">구현 자료</a>
             </div>
@@ -182,10 +183,10 @@
             <h2>GASOK(Production) 단계: 공식 Dojang 데이터 연동</h2>
             <div class="notice">
               <strong>현재 PoC는 Dojang 발급 이후의 ZK 증명 파이프라인을 검증합니다.</strong>
-              공식 Dojang의 Verified Address는 사용자가 KYC를 완료한 뒤 업비트가 발급하는
-              운영 데이터입니다. PoC에서는 발급 단계에 테스트 attester를 사용하고,
-              서킷·모바일 증명·verifier 흐름을 구현했습니다. Production 단계에서 발급자
-              주소, schema와 정책을 공식 Dojang 데이터에 맞춰 연동합니다.
+              공식 Dojang Verified Address는 사용자가 KYC를 완료한 뒤 업비트가 발급하는
+              운영 데이터입니다. 현재 PoC에서는 발급 단계에 테스트 attester를 적용해
+              서킷·모바일 증명·verifier 흐름 전반을 검증했습니다. Production 단계에서 공식
+              Dojang 데이터의 발급자 주소, schema, 인증 정책을 연동할 계획입니다.
             </div>
           </div>
         </div>
@@ -197,10 +198,10 @@
           <div class="content-body">
             <h2>GIWA Wallet 네이티브 통합 로드맵</h2>
             <p>
-              초기에는 ZKProofport 앱과 SDK로 빠르게 dApp 연동을 시작합니다. 공식 Dojang
-              데이터를 연결한 뒤에는 증명 요청·동의·생성을 GIWA Wallet 안에 통합합니다.
-              dApp은 같은 요청 규격을 유지하면서 Verified Address, Balance, Code 등
-              새로운 검증 서킷을 계속 추가할 수 있습니다.
+              초기에는 ZKProofport 앱과 SDK를 통해 빠르게 dApp 연동을 지원합니다. 공식
+              Dojang 데이터 연동 이후에는 증명 요청·동의·생성 과정을 GIWA Wallet에
+              네이티브로 통합합니다. dApp은 같은 요청 규격을 유지하면서 Verified Address,
+              Balance, Code 등 새로운 검증 서킷을 확장 적용할 수 있습니다.
             </p>
             <ul class="plain-list">
               <li><b>01</b><span>테스트 attester를 사용한 GIWA Sepolia PoC — 구현 완료</span></li>

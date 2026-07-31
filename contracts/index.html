@@ -6,7 +6,7 @@
     <title>Implementation — ZKProofport for GIWA</title>
     <meta
       name="description"
-      content="Dojang 데이터를 ZK proof로 바꾸고 GIWA에서 검증하는 구현 자료와 배포 정보"
+      content="Dojang 데이터를 ZK proof로 변환해 GIWA에서 검증하는 구현 자료 및 배포 정보"
     />
     <meta property="og:image" content="../assets/og.png" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -42,10 +42,10 @@
         <div>
           <h1>Dojang 데이터에서<br />GIWA 검증까지</h1>
           <p class="lede">
-            Dojang이 발급한 인증 데이터를 ZKProofport 서킷을 이용해 proof를 생성합니다.
-            사용자는 원본 지갑 주소와 attestation을 공개하지 않고 proof를 만들며,
-            GIWA verifier는 그 proof만 확인합니다. 현재 PoC에서는 발급 단계에
-            테스트 attester를 사용합니다.
+            Dojang이 발급한 인증 데이터를 ZKProofport 서킷을 통해 ZK proof로 변환합니다.
+            사용자는 원본 지갑 주소와 attestation을 dApp에 공개하지 않고 proof를 생성하며,
+            GIWA verifier는 해당 proof만 검증합니다. 현재 PoC에서는 발급 단계에 테스트
+            attester를 사용합니다.
           </p>
         </div>
       </section>
@@ -115,7 +115,7 @@
             </div>
             <ol class="status-list" style="margin-top: 30px">
               <li><b>01</b><span>Dojang이 Verified Address나 Balance 같은 인증 데이터를 발급합니다.</span></li>
-              <li><b>02</b><span>ZKProofport 서킷이 attestation, 발급자와 지갑 소유권을 private input으로 확인합니다.</span></li>
+              <li><b>02</b><span>ZKProofport 서킷이 attestation, 발급자 정보, 지갑 소유권을 private input으로 검증합니다.</span></li>
               <li><b>03</b><span>모바일 기기에서 조건 충족 여부만 담은 ZK proof를 생성합니다.</span></li>
               <li><b>04</b><span>GIWA verifier가 원본 Dojang 데이터 없이 proof의 유효성을 검증합니다.</span></li>
             </ol>
@@ -137,7 +137,7 @@
               >
                 <span>SOURCE · CIRCUIT</span>
                 <h3>GIWA attestation circuit</h3>
-                <p>attestation, 발급자와 지갑 소유권을 검증하는 Noir 서킷과 컨트랙트 소스</p>
+                <p>attestation, 발급자 및 지갑 소유권을 검증하는 Noir 서킷과 컨트랙트 소스</p>
                 <b>GitHub →</b>
               </a>
               <a
@@ -159,7 +159,7 @@
               >
                 <span>SOURCE · SDK FOUNDATION</span>
                 <h3>dApp integration SDK</h3>
-                <p>proof request와 검증을 위한 공개 기반. GIWA 서킷 타입은 공식 연동 단계에서 추가</p>
+                <p>proof request와 온체인 검증을 위한 SDK 기반. GIWA 서킷 타입은 공식 연동 단계에서 추가 예정</p>
                 <b>GitHub →</b>
               </a>
             </div>
@@ -174,10 +174,10 @@
             <h2>GASOK(Production) 단계: 공식 Dojang 데이터 연동</h2>
             <div class="notice">
               <strong>PoC에서 검증한 범위는 발급 이후의 ZK 증명 파이프라인입니다.</strong>
-              PoC에서는 테스트 attester로 mock EAS 데이터를 등록했습니다. 공식 Dojang
-              데이터 연동 단계에서는 이를 실제 발급 데이터로 바꾸고, 발급자 주소,
-              schema와 정책을 서킷의 검증 규칙에 반영합니다.
-              이후 모바일 prover와 GIWA verifier 구조는 같은 역할을 이어갑니다.
+              현재 PoC는 테스트 attester로 등록한 mock EAS 데이터를 사용합니다. 공식 Dojang
+              데이터 연동 단계에서는 이를 실제 발급 데이터로 전환하고, 발급자 주소,
+              schema, 인증 정책을 서킷 검증 로직에 반영할 예정입니다. 모바일 prover와
+              GIWA verifier 구조는 그대로 유지됩니다.
             </div>
             <div class="button-row">
               <a target="_blank" rel="noreferrer" class="button primary" href="../demo/">실제 구동 영상</a>
