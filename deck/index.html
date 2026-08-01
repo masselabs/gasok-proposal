@@ -155,44 +155,46 @@
           <div class="notice" style="margin-top: 18px">
             현재 PoC는 테스트 attester를 활용해 Dojang 발급 단계를 대체했으며, attestation
             조회부터 모바일 기기 내 proof 생성, GIWA verifier 검증까지 전체 파이프라인을
-            구현했습니다. Production 단계에서는 발급자 주소, schema, 인증 정책을 공식
-            Dojang 데이터와 연동할 예정입니다.
+            구현했습니다. 검증 로직은 Coinbase EAS KYC 증명에서 구현한 지갑 소유권,
+            attester 서명, transaction, scope-bound nullifier 모듈을 GIWA Sepolia 환경으로
+            확장했습니다.
           </div>
         </section>
 
-        <section class="pitch-slide" data-title="프라이버시" aria-hidden="true">
+        <section class="pitch-slide" data-title="활용 사례" aria-hidden="true">
           <div class="slide-header">
-            <p class="eyebrow">04 / PRIVACY</p>
-            <h2>dApp에는 검증 결과만,<br />원본 정보는 전달하지 않습니다.</h2>
-          </div>
-          <div class="slide-grid-2">
-            <article class="slide-card">
-              <span>dAPP LEARNS</span>
-              <h3>서비스가 검증하는 정보</h3>
-              <p>조건 충족 여부 · scope · nullifier · proof validity</p>
-            </article>
-            <article class="slide-card green">
-              <span>USER KEEPS</span>
-              <h3>dApp에 전달되지 않는 원본 정보</h3>
-              <p>원본 지갑 주소 · raw attestation · 지갑 서명 · 개인 신원 · 정확한 잔고</p>
-            </article>
+            <p class="eyebrow">04 / USE CASES</p>
+            <h2>Dojang 인증을<br />프라이버시 친화적으로 활용하는 방법</h2>
           </div>
           <div class="slide-grid-3">
-            <article class="slide-card">
-              <span>LESS DATA</span>
-              <h3>수집 최소화</h3>
-              <p>서비스가 수집·보관해야 하는 원본 데이터의 범위를 줄입니다.</p>
+            <article class="slide-card green">
+              <span>VERIFIED ADDRESS · REWARDS</span>
+              <h3>KYC 인증 사용자 대상 혜택</h3>
+              <p>
+                Dojang KYC를 완료한 사용자가 원본 지갑 주소를 공개하지 않고 에어드랍,
+                온보딩 보상, 우선 참여권 등의 혜택을 받을 수 있습니다.
+              </p>
             </article>
             <article class="slide-card">
-              <span>LESS RISK</span>
-              <h3>유출 위험 축소</h3>
-              <p>원본 데이터를 수집·저장하지 않아 사고 발생 시 노출될 데이터의 범위를 줄입니다.</p>
+              <span>NEXT · VERIFIED BALANCE</span>
+              <h3>잔고 조건 기반 등급과 혜택</h3>
+              <p>
+                특정 시점에 정해진 자산 기준 이상을 보유했다는 사실만 증명해 VIP 등급,
+                수수료 혜택, 우선 배정 또는 proof-of-funds에 활용할 수 있습니다.
+              </p>
             </article>
             <article class="slide-card">
-              <span>MORE CONTROL</span>
-              <h3>선택적 공개</h3>
-              <p>사용자가 매 요청마다 필요한 사실만 직접 증명합니다.</p>
+              <span>VERIFIED ADDRESS · ACCESS</span>
+              <h3>프라이빗 참여와 접근 제어</h3>
+              <p>
+                원본 지갑의 활동 내역을 공개하지 않고 이벤트 입장, 민팅, 인증 커뮤니티,
+                거버넌스 등에서 참여 자격과 중복 참여 여부를 확인할 수 있습니다.
+              </p>
             </article>
+          </div>
+          <div class="notice" style="margin-top: 18px">
+            위 사례 외에도 KYC, 잔고, 연령, 국가, 소속 등 신뢰 가능한 인증 데이터에서
+            필요한 조건만 증명하는 다양한 프라이버시 기능으로 확장할 수 있습니다.
           </div>
         </section>
 
